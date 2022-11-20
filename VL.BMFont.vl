@@ -307,7 +307,7 @@
         <Patch Id="No6s8OqzRXrLI2dWkIdMMo">
           <Canvas Id="QPNa8fmZYp9QcgstEml5q5" CanvasType="Group">
             <Node Bounds="1086,384,396,19" Id="DQIuHNl6G35Pnm2Ov0nOHq">
-              <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="vl.BMFont.vl">
+              <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="VL.BMFont.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Main" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="TextureSize" />
@@ -367,7 +367,7 @@
                         <Patch Id="Na0NtG5S3vHNij5dmB3usp" Name="Update" ManuallySortedPins="true" />
                         <Patch Id="OPIzDCrdRVlPM70FB1YXdH" Name="Dispose" ManuallySortedPins="true" />
                         <Node Bounds="1084,747,795,19" Id="Intn5cSeJ8sP4tVIlurdNS">
-                          <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="vl.BMFont.vl">
+                          <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="VL.BMFont.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="ProcessAppFlag" Name="GetCharPlacement" />
                           </p:NodeReference>
@@ -378,7 +378,7 @@
                           <Pin Id="TzTdBteKSy3P6rDG42ASmT" Name="CharPlacement" Kind="OutputPin" />
                         </Node>
                         <Node Bounds="1084,684,650,19" Id="Exhf2X22HzDM38UDKs26aI">
-                          <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="vl.BMFont.vl">
+                          <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="VL.BMFont.vl">
                             <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                             <Choice Kind="ProcessAppFlag" Name="TextMeasure" />
                           </p:NodeReference>
@@ -457,7 +457,7 @@
               <Pin Id="BN1nGBjHSI2LmH23nHcpmt" Name="Not Assigned" Kind="OutputPin" />
             </Node>
             <Node Bounds="1086,167,87,19" Id="EPLkbaeoHthQLCC5OOx3FY">
-              <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="vl.BMFont.vl">
+              <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="VL.BMFont.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="GetTexturePath" />
               </p:NodeReference>
@@ -566,7 +566,7 @@
               </p:ValueBoxSettings>
             </Pad>
             <Node Bounds="1086,120,58,19" Id="VbTuiPxEjAuOriS3PcsYyn">
-              <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="vl.BMFont.vl">
+              <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="VL.BMFont.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="LoadFont" />
               </p:NodeReference>
@@ -1480,7 +1480,7 @@
                     <Patch Id="T2KGy0UK4OaLHhiBebvvhM" Name="Update" ManuallySortedPins="true" />
                     <Patch Id="PIIayjHuDIlQCiId2SXx3n" Name="Dispose" ManuallySortedPins="true" />
                     <Node Bounds="832,546,719,19" Id="PzyruTXnI29PhScJxAQCfF">
-                      <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="vl.BMFont.vl">
+                      <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="VL.BMFont.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <Choice Kind="ProcessAppFlag" Name="Character" />
                       </p:NodeReference>
@@ -1881,7 +1881,7 @@
               <Pin Id="UczoViOfFaBP0Wty3WuofM" Name="Output" Kind="OutputPin" />
             </Node>
             <Node Bounds="181,131,165,19" Id="ArOZoKN38thLXbazy7Hp0u">
-              <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="vl.BMFont.vl">
+              <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="VL.BMFont.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="Font" />
               </p:NodeReference>
@@ -2034,5 +2034,5 @@
   <NugetDependency Id="LGY5BlCRTRjLHgySRQRSgk" Location="Cyotek.Drawing.BitmapFont" Version="2.0.4" />
   <PlatformDependency Id="JxuXu1ltI9gOWAOIFe6HS3" Location="System.Drawing" />
   <PlatformDependency Id="Tl4ZCl0cuLkNyYH6Z8aTjU" Location="./lib/Release/net6.0/BMFont.dll" />
-  <NugetDependency Id="GUkAymDnkYsLaPiD6PKdHE" Location="VL.Fuse" Version="0.0.0" />
+  <NugetDependency Id="GUkAymDnkYsLaPiD6PKdHE" Location="VL.Fuse" Version="0.2.3" />
 </Document>
