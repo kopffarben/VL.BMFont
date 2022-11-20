@@ -1,0 +1,10 @@
+shader CharPlacementStruct
+{
+    struct CharPlacement    // 32
+    {
+        int2  SrcPos;       // 8
+        int2  SrcSize;      // 8
+        int2  DesPos;       // 8
+        int2  DesSize;      // 8 
+    };
+};

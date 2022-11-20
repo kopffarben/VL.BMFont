@@ -1,0 +1,77 @@
+shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension, ShaderUtils
+{
+	compose BMFont_Provider Provider;
+
+	stage stream float2 quadSize;
+	//stage stream float  charOpacity;
+
+	// End of the VS (usually skinning)
+	stage override void PreTransformPosition() {}
+
+	// End of tessellation (usually displacement mapping in world space, etc...)
+	stage override void TransformPosition() {}
+
+	// At the end of the geometry pipeline (to generate ShadingPosition)
+	stage override void PostTransformPosition()
+	{
+		streams.ShadingPosition = streams.Position; // must be assigned to something
+	}
+
+	static const float2 FontQuadUV[4] = {
+        float2(0,0), 
+        float2(1,0),
+        float2(0,1),
+        float2(1,1)
+    };
+	static const float3 FontQuadPositions[4] = {
+        float3(-1, 1,0),
+        float3( 1, 1,0),
+        float3(-1, -1,0),
+        float3( 1, -1,0),
+    };
+
+		// custom geometry shader, quad particle in this case
+	[maxvertexcount(4)]
+	stage void GSMain(point Input input[1], inout TriangleStream<Output> triangleStream)
+	{
+		streams = input[0];
+
+		// get data from ParticleProvider implementation
+		streams.PositionWS = float4(Provider.getQuadPos(), 1);
+		streams.quadSize = Provider.getQuadSize();
+		if (streams.quadSize.x > 0 || streams.quadSize.y > 0)
+		{
+			float4 posView = mul(streams.PositionWS, WorldView);
+			for (int i=0; i<4; i++)
+			{
+				streams.TexCoord  = FontQuadUV[i].xy;
+				float4 viewCornerPos = float4(posView.xyz + FontQuadPositions[i].xyz * float3(streams.quadSize,1), 1);
+				streams.ShadingPosition = mul(viewCornerPos, Projection);
+
+				triangleStream.Append(streams);
+			}     
+		}
+	}
+
+
+	//override shading, create sphere impostor in this case
+	stage override float4 Shading()
+	{
+
+		float allCharTex = Provider.getCharOpacity(streams.TexCoord);
+		//if (allCharTex == 0)
+		//{
+		//	discard;
+		//}
+		
+		// new code to write pos & depth
+		// Shadows look correct now, but if you move the camera a distance away have other weirdness
+		// /*
+		float3 normal = float3(0,0,1);
+		normal = normalize(mul(float4(normal, 0), ViewInverse).xyz);
+		float4 worldPos = float4(streams.PositionWS.xyz, 1);
+		// */
+
+		return StrideShadingWorldNormal(worldPos, normal) * Provider.getQuadColor() * max(allCharTex,0.1);
+	}
+};
