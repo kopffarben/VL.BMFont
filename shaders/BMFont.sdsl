@@ -1,0 +1,36 @@
+shader BMFont : CharPlacementStruct
+{
+     SamplerState FontSampler
+	{
+		Filter = MIN_MAG_MIP_LINEAR;
+		AddressU = Border;
+		AddressV = Border;
+	};
+
+
+    // Gets the median of 3 values
+    float median(float r, float g, float b) 
+    {
+        return max(min(r, g), min(max(r, g), b));
+    }
+
+    // Retrieves the pixel's Opacity sampled from a signed distance field font texture
+    stage float getCharOpacity(float2 uv, StructuredBuffer<CharPlacementUV> CharPlacementUVBuffer, int startIndex, int endIndex, float screenPxRange, Texture2D FontTexture)
+	{
+		float opacity = 0;
+		for (uint i=(uint)startIndex; i<(uint)endIndex;i++)
+		{
+            float2 destUV = uv * CharPlacementUVBuffer[i].DesSize - CharPlacementUVBuffer[i].DesPos;
+            if (destUV.x > 0 && destUV.x < 1 && destUV.y > 0 && destUV.y < 1 )
+            {
+                float2 uv = destUV * CharPlacementUVBuffer[i].SrcSize + CharPlacementUVBuffer[i].SrcPos;
+                float3 msd = FontTexture.SampleLevel(FontSampler, uv,0).rgb;
+                float  sd  = median(msd.r, msd.g, msd.b);
+                float screenPxDistance = screenPxRange*(sd - 0.5);
+				opacity = max(opacity ,clamp(screenPxDistance + 0.5, 0.0, 1.0));
+
+            }
+        }
+		return opacity;
+	}
+};

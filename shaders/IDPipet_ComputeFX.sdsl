@@ -1,0 +1,26 @@
+shader IDPipet_ComputeFX : ComputeShaderBase
+{
+    uint Count = 1;
+
+    Buffer<float2> PosBuffer;
+    RWStructuredBuffer<float4> ColorsBuffer;
+
+    Texture2D Tex;
+    SamplerState TexSampler
+    {
+        Filter = MIN_MAG_MIP_POINT;
+        AddressU = clamp;
+        AddressV = clamp;
+        AddressW = clamp;
+        BorderColor = float4(0, 0, 0, 0);
+    };
+   	
+    override void Compute()
+    {
+        uint sampleID = streams.DispatchThreadId.x;
+        if (sampleID >= Count) return;
+        float2 uv = PosBuffer[sampleID];
+        ColorsBuffer[sampleID] = Tex.SampleLevel(TexSampler, uv, 0);
+    }
+
+};    

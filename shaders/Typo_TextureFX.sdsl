@@ -60,54 +60,7 @@ shader Typo_TextureFX : FilterBase, TextureUtils, CharPlacementStruct
             }
         }
         
-  //      int2 sPos[3]  = {int2(281,383),int2(394,126),int2(281,383)};
-  //      int2 sSize[3] = {int2( 49, 61),int2( 43, 44),int2( 49, 61)};
-  //      int2 dPos[3]  = {int2(  0,  0),int2(256,  0),int2(  0,  0)};
-  //      int2 dSize[3] = {int2(256,512),int2(256,512),int2(256,512)};
-
-  //      float opacity = 0;
-  //      for (uint i=0; i<2;i++)
-		//{
-  //          float2 desCharSize = ((float2)DesSize/(float2)dSize[i]);
-  //          float2 desCharPos  = ((float2)dPos[i]/(float2)dSize[i]);
-  //          float2 destUV = streams.TexCoord * desCharSize - desCharPos;
-  //          if (destUV.x > 0 && destUV.x < 1 && destUV.y > 0 && destUV.y < 1 )
-  //          {
-  //              float2 srcCharSize = ((float2)sSize[i]/(float2)SrcSize);
-  //              float2 srcCharPos  = ((float2)sPos[i]/(float2)SrcSize);
-  //              float2 uv = destUV * srcCharSize + srcCharPos;
-  //              float3 msd = Texture0.Sample(CustomSampler, uv).rgb;
-  //              float  sd  = median(msd.r, msd.g, msd.b);
-  //              float screenPxDistance = screenPxRange*(sd - 0.5);
-  //              opacity += clamp(screenPxDistance + 0.5, 0.0, 1.0);
-  //          }
-  //      }
         return lerp(bgColor, fgColor, opacity);
-        //float2 srcCharSize = ((float2)SrcCharSize/(float2)SrcSize);
-        //float2 srcCharPos  = ((float2)SrcCharPos/(float2)SrcSize);
-
-        //float2 desCharSize = ((float2)DesSize/(float2)DesCharSize);
-        //float2 desCharPos  = ((float2)DesCharPos/(float2)DesCharSize);
-
-        //float2 destUV = streams.TexCoord * desCharSize - desCharPos;
-
-        //if (destUV.x < 0 || destUV.x > 1 || destUV.y < 0 || destUV.y > 1 )
-        //{
-        //    return bgColor;
-        //}
-
-        //float2 srcUV = destUV * srcCharSize + srcCharPos;
-
-        
-        
-        //float2 uv = srcUV;
-
-        //float3 msd = Texture0.Sample(CustomSampler, uv).rgb;
-        //float  sd  = median(msd.r, msd.g, msd.b);
-        //float screenPxDistance = screenPxRange*(sd - 0.5);
-        //float opacity = clamp(screenPxDistance + 0.5, 0.0, 1.0);
-
-        //return lerp(bgColor, fgColor, opacity);;
 
     }
 

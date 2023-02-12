@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="EJSUis4GpmZN3JaT3CQ4DN" LanguageVersion="2022.5.0-0479-3c2e2cbf1f" Version="0.128">
+<Document xmlns:p="property" Id="FToID2CQGOrP4eEi83ajki" LanguageVersion="2022.5.0-0479-3c2e2cbf1f" Version="0.128">
   <NugetDependency Id="EKGPk82yXAjLsM1tg7IQpr" Location="VL.CoreLib" Version="2022.5.0-0479-g3c2e2cbf1f" />
   <Patch Id="ECEmdfCO4meMOIDih7X7tZ">
     <Canvas Id="QIV5ZFU7zcmPyaMmDK3KOb" DefaultCategory="Main" CanvasType="FullCategory" />
@@ -27,6 +27,7 @@
             <Pin Id="F9XOloRWycYN2em9qBPdL2" Name="TextSpread" Kind="InputPin" />
             <Pin Id="V1eeCc4eXqwOInpmrLuRNT" Name="FontPath" Kind="InputPin" />
             <Pin Id="Hh4BYxqv4cZM3KX5CrtfxZ" Name="Size" Kind="InputPin" DefaultValue="0.87" />
+            <Pin Id="GWGaqcVXtxhMi3Vfez5zNR" Name="Padding" Kind="InputPin" />
             <Pin Id="PWX96sa0xIPOYF2Npoo6tD" Name="Material" Kind="InputPin" />
             <Pin Id="TEUmycfgowbOFBNwSkz0HK" Name="Is Shadow Caster" Kind="InputPin" DefaultValue="True" />
             <Pin Id="Ajx3O8znIC0LwCluGDeg7j" Name="Enabled" Kind="InputPin" />
@@ -37,7 +38,7 @@
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="787,839,77,19" Id="O2tVxX4PS2HNTyX7Ctv9rO">
+          <Node Bounds="612,818,77,19" Id="O2tVxX4PS2HNTyX7Ctv9rO">
             <p:NodeReference LastCategoryFullName="Stride.Materials" LastSymbolSource="VL.Stride.Rendering.ShaderFX.vl" LastDependency="VL.Stride.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="Materials" NeedsToBeDirectParent="true" />
@@ -347,7 +348,7 @@
               <Choice Kind="ProcessAppFlag" Name="LinearSpread" />
             </p:NodeReference>
             <Pin Id="G0hvh7Rb2kiM5nUe5Ui2Ad" Name="Center" Kind="InputPin" DefaultValue="0.5" />
-            <Pin Id="LKwRUKByMeaOwA2uWV0pNB" Name="Width" Kind="InputPin" />
+            <Pin Id="LKwRUKByMeaOwA2uWV0pNB" Name="Width" Kind="InputPin" DefaultValue="1" />
             <Pin Id="EO8N7kbIHD6MYt7SpBbPm9" Name="Alignment" Kind="InputPin" />
             <Pin Id="Q7rD2kUaSxxL5RHFMItna8" Name="Phase" Kind="InputPin" />
             <Pin Id="TiJbBHmfCQZObWR0WvIAAZ" Name="Count" Kind="InputPin" />
@@ -440,7 +441,7 @@
             <Pin Id="BNiaHZME16iM85p46uxQid" Name="Output" Kind="OutputPin" />
             <Pin Id="Us3SIVh1alfP3DRnZ6g4wm" Name="Has Changed" Kind="OutputPin" />
           </Node>
-          <Pad Id="QJZCGLsZRUYO6Uuqy7LQoc" Comment="Use BG" Bounds="381,795,38,15" ShowValueBox="true" isIOBox="true" Value="False">
+          <Pad Id="QJZCGLsZRUYO6Uuqy7LQoc" Comment="Use BG" Bounds="381,795,38,15" ShowValueBox="true" isIOBox="true" Value="True">
             <p:TypeAnnotation>
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -449,23 +450,20 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="H9wKhU4UMrVPfTpYG0VL9Y" Comment="Iteration Count" Bounds="380,0,35,15" ShowValueBox="true" isIOBox="true" Value="5">
+          <Pad Id="H9wKhU4UMrVPfTpYG0VL9Y" Comment="Iteration Count" Bounds="380,0,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="950,740" Id="BN2sFrHj9EdPpR2iibzO0X">
-            <p:NodeReference LastCategoryFullName="Stride.Rendering" LastSymbolSource="VL.Stride.Rendering.vl" LastDependency="VL.Stride.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="CopyTextureRenderer" />
-            </p:NodeReference>
-            <Pin Id="V0g6x888rc7LTjBFodEO2P" Name="Input" Kind="InputPin" />
-            <Pin Id="OS3w4EgTw8ZOHg2CvhiXKF" Name="Source" Kind="InputPin" />
-            <Pin Id="PjTM7HX3t5sOBGQML9zObe" Name="Destination" Kind="InputPin" />
-            <Pin Id="SthPJZIeIg7O9KMZEhoj8b" Name="Output" Kind="StateOutputPin" />
-            <Pin Id="UFKMtKhJGiuMatICJOUr94" Name="Success" Kind="OutputPin" />
-            <Pin Id="PmfNLWbUeBEOBGSIJaD2VW" Name="Destination" Kind="OutputPin" />
-          </Node>
+          <Pad Id="GbbXiMtLUxeM3KR3n0tgdQ" Comment="Padding" Bounds="592,598,35,57" ShowValueBox="true" isIOBox="true" Value="10, 10, 10, 10">
+            <p:TypeAnnotation LastCategoryFullName="3D" LastSymbolSource="CoreLibBasics.vl" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Vector4" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:precision p:Type="Int32">0</p:precision>
+              <p:stepsize p:Type="Single">1</p:stepsize>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="PKHPSIMPNcFNORFYart9fm" Name="Create" />
         <Patch Id="Hm4PQwQ06GONrNOPSl1RNI" Name="Update" />
@@ -517,6 +515,7 @@
         <Link Id="KIdkgYTeuy6PxfAqujlnJW" Ids="HGVpU9xDpwnLsOdcP9nAT0,DMXVv7UuCOlPKR8RPBFqrz" />
         <Link Id="UdXM9pGVIV7MujZDf9F9iQ" Ids="H9wKhU4UMrVPfTpYG0VL9Y,BkDyr0yI1u2MSrH4a0LZW1" />
         <Link Id="PQXuTbf69sqOHPJOKfTTWZ" Ids="BkDyr0yI1u2MSrH4a0LZW1,A38gPG1sTASNbb6HLIfGV3" />
+        <Link Id="SRQvb1WgjsUPvTLzzrdqyl" Ids="GbbXiMtLUxeM3KR3n0tgdQ,GWGaqcVXtxhMi3Vfez5zNR" />
       </Patch>
     </Node>
   </Patch>

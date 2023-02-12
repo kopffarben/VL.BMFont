@@ -15,9 +15,24 @@ shader BMFont_Provider
         return float4(1,1,1,1);
     }
 
+    stage bool useBG()
+    {
+        return false;
+    }
+
+    stage float4 getBGQuadColor()
+    {
+        return float4(1,1,1,1);
+    }
+
     stage float getCharOpacity(float2 uv)
     {
         return 1;
+    }
+
+    stage float4 getID()
+    {
+        return float4(-1,-1,-1,-1);
     }
 
 };

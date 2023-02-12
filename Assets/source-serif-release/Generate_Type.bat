@@ -1,0 +1,12 @@
+start msdf-bmfont -o SourceSerif4-Black.png           -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-Black.ttf
+start msdf-bmfont -o SourceSerif4-BlackIt.png          -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-BlackIt.ttf
+start msdf-bmfont -o SourceSerif4-Bold.png          -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-Bold.ttf
+start msdf-bmfont -o SourceSerif4-BoldIt.png          -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-BoldIt.ttf
+start msdf-bmfont -o SourceSerif4-ExtraLight.png          -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-ExtraLight.ttf
+start msdf-bmfont -o SourceSerif4-ExtraLightIt.png          -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-ExtraLightIt.ttf
+start msdf-bmfont -o SourceSerif4-It.png          -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-It.ttf
+start msdf-bmfont -o SourceSerif4-Light.png          -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-Light.ttf
+start msdf-bmfont -o SourceSerif4-LightIt.png          -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-LightIt.ttf
+start msdf-bmfont -o SourceSerif4-Regular.png          -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-Regular.ttf
+start msdf-bmfont -o SourceSerif4-Semibold.png          -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-Semibold.ttf
+start msdf-bmfont -o SourceSerif4-SemiboldIt.png          -s 64 -r 4 -p 1 -t msdf -m "512,512" -i charset.asci.german.txt .\SourceSerif4-SemiboldIt.ttf

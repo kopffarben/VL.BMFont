@@ -1,9 +1,10 @@
-shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension, ShaderUtils
+shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension
 {
 	compose BMFont_Provider Provider;
 
 	stage stream float2 quadSize;
-	//stage stream float  charOpacity;
+	stage stream float4 quadCol;
+	stage stream float4 quadBGCol;
 
 	// End of the VS (usually skinning)
 	stage override void PreTransformPosition() {}
@@ -30,15 +31,18 @@ shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension, ShaderUtils
         float3( 1, -1,0),
     };
 
-		// custom geometry shader, quad particle in this case
+	// custom geometry shader, quad particle in this case
 	[maxvertexcount(4)]
 	stage void GSMain(point Input input[1], inout TriangleStream<Output> triangleStream)
 	{
 		streams = input[0];
 
-		// get data from ParticleProvider implementation
+		// get data from BMFont_Provider implementation
 		streams.PositionWS = float4(Provider.getQuadPos(), 1);
 		streams.quadSize = Provider.getQuadSize();
+		streams.quadCol = Provider.getQuadColor();
+		streams.quadBGCol = Provider.getBGQuadColor();
+
 		if (streams.quadSize.x > 0 || streams.quadSize.y > 0)
 		{
 			float4 posView = mul(streams.PositionWS, WorldView);
@@ -59,10 +63,10 @@ shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension, ShaderUtils
 	{
 
 		float allCharTex = Provider.getCharOpacity(streams.TexCoord);
-		//if (allCharTex == 0)
-		//{
-		//	discard;
-		//}
+		if (allCharTex == 0 && !Provider.useBG())
+		{
+			discard;
+		}
 		
 		// new code to write pos & depth
 		// Shadows look correct now, but if you move the camera a distance away have other weirdness
@@ -72,6 +76,8 @@ shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension, ShaderUtils
 		float4 worldPos = float4(streams.PositionWS.xyz, 1);
 		// */
 
-		return StrideShadingWorldNormal(worldPos, normal) * Provider.getQuadColor() * max(allCharTex,0.1);
+		
+
+		return StrideShadingWorldNormal(worldPos, normal) * lerp(Provider.useBG() ? streams.quadBGCol : streams.quadCol, streams.quadCol, min(max(allCharTex,0.0),1.0));
 	}
 };

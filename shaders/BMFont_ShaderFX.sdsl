@@ -1,27 +1,33 @@
-﻿shader BMFont_ShaderFX : BMFont_Provider, FuseCommonBuffer, TransformationBase, VertexIDStream, CharPlacementStruct
+﻿shader BMFont_ShaderFX : BMFont_Provider, TransformationBase, VertexIDStream, CharPlacementStruct, BMFont, Transformation
 {
 	rgroup PerMaterial
 	{
-		stage StructuredBuffer<float3>			posBuffer;
-		stage StructuredBuffer<int>				CharPosIndex;
-		stage StructuredBuffer<CharPlacement>	CharPlacementBuffer;
-		stage StructuredBuffer<int2>			CharStartEndBuffer;
-		stage StructuredBuffer<int2>			CharTexSizeBuffer;
-		stage StructuredBuffer<float4>			CharColorBuffer;
+		stage StructuredBuffer<float3>			PositionBuffer;
+		stage StructuredBuffer<int>				PositionBufferIndex;
 
-		stage Texture2D FontTexture;
-		stage SamplerState FontSampler
-		{
-			Filter = MIN_MAG_MIP_LINEAR;
-			AddressU = Border;
-			AddressV = Border;
-		};		
+		stage StructuredBuffer<float4>			ColorBuffer;
+		stage StructuredBuffer<int>				ColorBufferIndex;
+
+
+		stage StructuredBuffer<float4>			BGColorBuffer;
+		stage StructuredBuffer<int>				BGColorBufferIndex;
+
+		stage StructuredBuffer<CharPlacementUV>	CharPlacementUVBuffer;
+		stage StructuredBuffer<int2>			CharStartEndBuffer;
+		stage StructuredBuffer<float2>			QuadSizeBuffer;
+
+		stage Texture2D FontTexture;				
 	}
 
 	cbuffer PerMaterial
 	{
-		stage int	 LineHight = 380;
-		stage int2   SrcSize = int2(512,512);
+		[Color]
+		stage float4 Color		= float4(1,1,1,1);
+
+		stage bool   UseBG		= false;
+		[Color]
+		stage float4 BGColor	= float4(1,1,1,1);
+		
 		stage float	 Size = 1.0;
 		stage float  screenPxRange = 16;
 	}
@@ -32,47 +38,60 @@
 		AssignVertexID();
 	}
 
+
 	override stage float3 getQuadPos()
 	{
-		return posBuffer[CharPosIndex[streams.VertexID]];
+
+		uint positionCount,indexCount, stride;
+		PositionBuffer.GetDimensions(positionCount, stride);
+		PositionBufferIndex.GetDimensions(indexCount, stride);
+		return indexCount == 0 ? PositionBuffer[streams.VertexID % positionCount ] : PositionBuffer[PositionBufferIndex[streams.VertexID % indexCount] % positionCount];
 	}
 
 	override stage float2 getQuadSize()
 	{
-		return float2(((float)CharTexSizeBuffer[streams.VertexID].x * Size)/(float)LineHight,((float)CharTexSizeBuffer[streams.VertexID].y * Size)/(float)LineHight);
+		return QuadSizeBuffer[streams.VertexID] * Size;
 	}
 
 	override stage float4 getQuadColor()
     {
-		return CharColorBuffer[streams.VertexID];
+		uint colorCount,indexCount, stride;
+		ColorBuffer.GetDimensions(colorCount, stride);
+		if (colorCount == 0) return Color;
+		ColorBufferIndex.GetDimensions(indexCount, stride);
+		return indexCount == 0 ? ColorBuffer[streams.VertexID % colorCount] : ColorBuffer[ColorBufferIndex[streams.VertexID % indexCount] % colorCount ];
     }
 
+	override stage bool useBG()
+    {
+		return UseBG;
+    }
+
+	override stage float4 getBGQuadColor()
+    {
+        uint colorCount,indexCount, stride;
+		BGColorBuffer.GetDimensions(colorCount, stride);
+		if (colorCount == 0) return BGColor;
+		BGColorBufferIndex.GetDimensions(indexCount, stride);
+		return indexCount == 0 ? BGColorBuffer[streams.VertexID % colorCount] : BGColorBuffer[BGColorBufferIndex[streams.VertexID % indexCount] % colorCount];
+    }
+
+	override stage float4 getID()
+    {
+		uint posBufferCount,colBufferCount, stride;
+		PositionBufferIndex.GetDimensions(posBufferCount, stride);
+		ColorBufferIndex.GetDimensions(colBufferCount, stride);
+        return float4(
+			(float)streams.VertexID, 
+			posBufferCount == 0 ? -1 : (float)PositionBufferIndex[streams.VertexID % posBufferCount],
+			colBufferCount == 0 ? -1 : (float)ColorBufferIndex[streams.VertexID % colBufferCount],
+			-1
+		);
+    }
 
 	override stage float getCharOpacity(float2 uv)
 	{
-		float opacity = 0;
-		for (uint i=(uint)CharStartEndBuffer[streams.VertexID].x; i<(uint)CharStartEndBuffer[streams.VertexID].y;i++)
-		{
-            float2 desCharSize = ((float2)CharTexSizeBuffer[streams.VertexID]/(float2)CharPlacementBuffer[i].DesSize);
-            float2 desCharPos  = ((float2)CharPlacementBuffer[i].DesPos/(float2)CharPlacementBuffer[i].DesSize);
-            float2 destUV = uv * desCharSize - desCharPos;
-            if (destUV.x > 0 && destUV.x < 1 && destUV.y > 0 && destUV.y < 1 )
-            {
-                float2 srcCharSize = ((float2)CharPlacementBuffer[i].SrcSize/(float2)SrcSize);
-                float2 srcCharPos  = ((float2)CharPlacementBuffer[i].SrcPos/(float2)SrcSize);
-                float2 uv = destUV * srcCharSize + srcCharPos;
-                float3 msd = FontTexture.SampleLevel(FontSampler, uv,0).rgb;
-                float  sd  = median(msd.r, msd.g, msd.b);
-                float screenPxDistance = screenPxRange*(sd - 0.5);
-				opacity = max(opacity ,clamp(screenPxDistance + 0.5, 0.0, 1.0));
 
-            }
-        }
-		return opacity;
+		 return getCharOpacity( uv, CharPlacementUVBuffer, CharStartEndBuffer[streams.VertexID].x, CharStartEndBuffer[streams.VertexID].y, screenPxRange, FontTexture);
 	}
-
-	float median(float r, float g, float b) 
-    {
-        return max(min(r, g), min(max(r, g), b));
-    }
 };
