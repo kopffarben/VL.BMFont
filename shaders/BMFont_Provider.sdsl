@@ -35,4 +35,9 @@ shader BMFont_Provider
         return float4(-1,-1,-1,-1);
     }
 
+    stage float3 getPlacement()
+    {
+        return float3(0,0,0);
+    }
+
 };

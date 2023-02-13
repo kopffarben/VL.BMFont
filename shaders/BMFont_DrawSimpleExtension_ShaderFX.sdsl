@@ -3,6 +3,7 @@ shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension
 	compose BMFont_Provider Provider;
 
 	stage stream float2 quadSize;
+	stage stream float3 quadPlacement;
 	stage stream float4 quadCol;
 	stage stream float4 quadBGCol;
 
@@ -27,8 +28,8 @@ shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension
 	static const float3 FontQuadPositions[4] = {
         float3(-1, 1,0),
         float3( 1, 1,0),
-        float3(-1, -1,0),
-        float3( 1, -1,0),
+        float3(-1,-1,0),
+        float3( 1,-1,0),
     };
 
 	// custom geometry shader, quad particle in this case
@@ -40,6 +41,7 @@ shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension
 		// get data from BMFont_Provider implementation
 		streams.PositionWS = float4(Provider.getQuadPos(), 1);
 		streams.quadSize = Provider.getQuadSize();
+		streams.quadPlacement = Provider.getPlacement();
 		streams.quadCol = Provider.getQuadColor();
 		streams.quadBGCol = Provider.getBGQuadColor();
 
@@ -49,7 +51,7 @@ shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension
 			for (int i=0; i<4; i++)
 			{
 				streams.TexCoord  = FontQuadUV[i].xy;
-				float4 viewCornerPos = float4(posView.xyz + FontQuadPositions[i].xyz * float3(streams.quadSize,1), 1);
+				float4 viewCornerPos = float4(posView.xyz + (FontQuadPositions[i].xyz + streams.quadPlacement) * float3(streams.quadSize,1), 1);
 				streams.ShadingPosition = mul(viewCornerPos, Projection);
 
 				triangleStream.Append(streams);

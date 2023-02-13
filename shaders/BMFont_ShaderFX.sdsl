@@ -30,6 +30,8 @@
 		
 		stage float	 Size = 1.0;
 		stage float  screenPxRange = 16;
+
+		stage float3 Placement = float3(0,0,0);
 	}
 
 	// assign VertexID
@@ -87,6 +89,11 @@
 			colBufferCount == 0 ? -1 : (float)ColorBufferIndex[streams.VertexID % colBufferCount],
 			-1
 		);
+    }
+
+	override stage float3 getPlacement()
+    {
+		return Placement;
     }
 
 	override stage float getCharOpacity(float2 uv)
