@@ -192,6 +192,8 @@
               <Pin Id="Ej9BD5Ce517PaBkUpx7gaa" Name="Size" Kind="InputPin" />
               <Pin Id="PHoRB4Ol7kmNFbpLigJYNs" Name="Screen Px Range" Kind="InputPin" DefaultValue="17.1" />
               <Pin Id="Cls6UOE7245L9ApZFeNY0f" Name="Placement" Kind="InputPin" />
+              <Pin Id="ITmtgDcHptZP8oxFgWsnL0" Name="Border Thickness" Kind="InputPin" />
+              <Pin Id="SOU1gMMQVf5OviX2iMPzqa" Name="Border Radius" Kind="InputPin" />
               <Pin Id="Q11SXG5n3AMPZQw3wyn0VM" Name="Output" Kind="OutputPin" />
             </Node>
             <Pad Id="Gdwnnbd8DzMNa4qpJyuUAk" Comment="FileName" Bounds="174,30,467,15" ShowValueBox="true" isIOBox="true" Value="Assets\Typo\FuturiumType-Regular.fnt">
@@ -285,6 +287,18 @@
               </p:TypeAnnotation>
             </Pad>
             <ControlPoint Id="S694AmQot8JPGARhKQDAfx" Bounds="565,51" />
+            <Pad Id="UxicpxQwoY6L71TTahm9B3" Comment="Border Thickness" Bounds="401,286,35,15" ShowValueBox="true" isIOBox="true" Value="0.099999994">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pad>
+            <Pad Id="AAS0H1zT8fhNQgLJXNdpNe" Comment="Border Radius" Bounds="446,315,35,15" ShowValueBox="true" isIOBox="true" Value="0.19999999">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
+              </p:TypeAnnotation>
+            </Pad>
+            <ControlPoint Id="RVSl6iQ1pWyM4UEgRORSfY" Bounds="430,-138" />
+            <ControlPoint Id="EIQr1HS3DQSMUhKa9EMrPW" Bounds="470,-103" />
           </Canvas>
           <ProcessDefinition Id="DBZwx4dGpDDOyejkf51WaH">
             <Fragment Id="NHQZi3xIRQwL0Eax4ZnePT" Patch="VvchI4Mn4edMpF2a22g6ou" Enabled="true" />
@@ -377,6 +391,8 @@
             <Pin Id="HjIizekcVSxQFDt7Frjy5s" Name="BMFontProvider" Kind="OutputPin" Bounds="-30,410" Visibility="Optional" />
             <Pin Id="MULzcLRo5eyP8tUcLSliDm" Name="Mesh" Kind="OutputPin" Bounds="550,714" Visibility="Optional" />
             <Pin Id="CkWAUjEAncJOcneKh3h0wz" Name="Placement" Kind="InputPin" Bounds="565,51" />
+            <Pin Id="BFSljncrLWBMCPVPW4Jnxv" Name="BorderThickness" Kind="InputPin" Bounds="480,-150" DefaultValue="0.099999994" />
+            <Pin Id="SB9ZYCl2gYaLoxCf0mttWh" Name="BorderRadius" Kind="InputPin" Bounds="485,-78" DefaultValue="0.19999999" />
           </Patch>
           <Link Id="IHI6nmrb00BLpIHKAw6sAg" Ids="Q11SXG5n3AMPZQw3wyn0VM,OQjhE0vrhE5OTzfh2UZdDc" />
           <Link Id="OZDJqyTL885QAu07gWNWqT" Ids="OQjhE0vrhE5OTzfh2UZdDc,HjIizekcVSxQFDt7Frjy5s" IsHidden="true" />
@@ -387,6 +403,12 @@
           <Link Id="BBzFiGyOHBCNIwNi8snW1M" Ids="SBsswv19SKGOpdqTqoV7OV,Cls6UOE7245L9ApZFeNY0f" />
           <Link Id="RSGwdtqZA5BOUANuDoxarM" Ids="S694AmQot8JPGARhKQDAfx,SBsswv19SKGOpdqTqoV7OV" />
           <Link Id="FCM7UOiE2foMpe7WBUbG9g" Ids="CkWAUjEAncJOcneKh3h0wz,S694AmQot8JPGARhKQDAfx" IsHidden="true" />
+          <Link Id="HZ1ymRuW5kWLqOEAmuDeVh" Ids="UxicpxQwoY6L71TTahm9B3,ITmtgDcHptZP8oxFgWsnL0" />
+          <Link Id="QySRbTvvUPBLDqRcnh6fUd" Ids="AAS0H1zT8fhNQgLJXNdpNe,SOU1gMMQVf5OviX2iMPzqa" />
+          <Link Id="D1b5tjiG26ZNC9wxeIjptK" Ids="RVSl6iQ1pWyM4UEgRORSfY,UxicpxQwoY6L71TTahm9B3" />
+          <Link Id="OqcZgaNBRhAPn1KxpoZE9d" Ids="BFSljncrLWBMCPVPW4Jnxv,RVSl6iQ1pWyM4UEgRORSfY" IsHidden="true" />
+          <Link Id="A4hnrQbTuAzLMPz6edHwGZ" Ids="EIQr1HS3DQSMUhKa9EMrPW,AAS0H1zT8fhNQgLJXNdpNe" />
+          <Link Id="UIEG30vbPTULauhJT3LUgv" Ids="SB9ZYCl2gYaLoxCf0mttWh,EIQr1HS3DQSMUhKa9EMrPW" IsHidden="true" />
         </Patch>
       </Node>
       <Canvas Id="C7sQ3lhwgZKNLM6vATqi92" Name="Internal" Position="710,158">
@@ -2193,6 +2215,8 @@
               <Pin Id="CKPd650CG6WPEWG4CUKyHa" Name="Is Shadow Caster" Kind="InputPin" />
               <Pin Id="IkaPZjtYAkfOaET6c8uzIt" Name="Enabled" Kind="InputPin" />
               <Pin Id="MZcLc7qEkliOICPZ6r0Enj" Name="Placement" Kind="InputPin" />
+              <Pin Id="QSSUyr0sbT6OBKOtINpCmM" Name="BorderThickness" Kind="InputPin" />
+              <Pin Id="JR67MYgFvAwPyz8P5xetty" Name="BorderRadius" Kind="InputPin" />
               <Pin Id="EMA679UP7i9MhvuO4Cgc7a" Name="Entity" Kind="OutputPin" />
               <Pin Id="B1jxFHlIPIqQN6r4QwHClP" Name="BMFontProvider" Kind="OutputPin" />
               <Pin Id="Dp7fj3ukgn8PgXrEmglhdr" Name="Mesh" Kind="OutputPin" />

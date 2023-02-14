@@ -14,6 +14,21 @@ shader BMFont : CharPlacementStruct
         return max(min(r, g), min(max(r, g), b));
     }
 
+    float RectSDF(float2 p, float2 b, float r)
+	{
+		float2 d = abs(p) - b + float2(r,r);
+		return min(max(d.x, d.y), 0.0) + length(max(d, 0.0)) - r;   
+	}
+
+    stage float getBorder(float2 uv,float2 QuadSize, float radius, float borderThickness)
+    {
+        float2 pos   = uv*QuadSize;
+        float  fDist = RectSDF(pos-QuadSize/2.0, QuadSize/2.0 - float2(borderThickness,borderThickness)/2, radius);
+
+        return fDist * 2/borderThickness;
+    }
+
+
     // Retrieves the pixel's Opacity sampled from a signed distance field font texture
     stage float getCharOpacity(float2 uv, StructuredBuffer<CharPlacementUV> CharPlacementUVBuffer, int startIndex, int endIndex, float screenPxRange, Texture2D FontTexture)
 	{

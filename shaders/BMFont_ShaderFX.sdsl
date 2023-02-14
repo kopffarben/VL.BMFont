@@ -32,6 +32,9 @@
 		stage float  screenPxRange = 16;
 
 		stage float3 Placement = float3(0,0,0);
+
+		stage float  borderThickness	= 0.2;
+		stage float  borderRadius		= 0.5;
 	}
 
 	// assign VertexID
@@ -95,6 +98,13 @@
     {
 		return Placement;
     }
+
+	override stage float getBorder(float2 uv)
+	{
+
+		 return getBorder( uv, QuadSizeBuffer[streams.VertexID] * Size, borderRadius, borderThickness);
+	}
+
 
 	override stage float getCharOpacity(float2 uv)
 	{

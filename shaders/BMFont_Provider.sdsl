@@ -30,6 +30,11 @@ shader BMFont_Provider
         return 1;
     }
 
+    stage float getBorder(float2 uv)
+    {
+        return 1;
+    }
+
     stage float4 getID()
     {
         return float4(-1,-1,-1,-1);
