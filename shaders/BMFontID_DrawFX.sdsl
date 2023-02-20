@@ -1,9 +1,15 @@
 shader BMFontID_DrawFX : VS_PS_Base, ColorBase, ShaderUtils, Texturing
 {
-    compose BMFont_Provider Provider;
+    //compose BMFont_Provider Provider;
 
+	stage StructuredBuffer<float3>			PositionBuffer;
+	stage StructuredBuffer<int>				PositionBufferIndex;
+	stage StructuredBuffer<bool>			enabledBuffer;
+	stage StructuredBuffer<float2>			QuadSizeBuffer;
+
+	stream uint VertexID : SV_VertexID;
+	stream bool Enabled;
     stage stream float2 quadSize;
-	stage stream float4 quadCol;
 	stage stream float4 quadBGCol;
 
     static const float2 FontQuadUV[4] = {
@@ -22,6 +28,11 @@ shader BMFontID_DrawFX : VS_PS_Base, ColorBase, ShaderUtils, Texturing
 
     override stage void VSMain()
     {
+	   uint id = streams.VertexID;
+	   streams.Enabled = enabledBuffer[PositionBufferIndex[id]];;
+	   streams.PositionWS = float4(PositionBuffer[PositionBufferIndex[id]], 1);
+	   streams.quadSize = QuadSizeBuffer[id];
+	   streams.quadBGCol = float4( (float)id, (float)PositionBufferIndex[id], -1,-1);
        streams.ShadingPosition = streams.Position; // must be assigned to something
     }
 
@@ -31,23 +42,20 @@ shader BMFontID_DrawFX : VS_PS_Base, ColorBase, ShaderUtils, Texturing
 	{
 		streams = input[0];
 
-		// get data from BMFont_Provider implementation
-		streams.PositionWS = float4(Provider.getQuadPos(), 1);
-		streams.quadSize = Provider.getQuadSize();
-		streams.quadCol = Provider.getQuadColor();
-		streams.quadBGCol = Provider.getID();
-
-		if (streams.quadSize.x > 0 || streams.quadSize.y > 0)
+		if (streams.Enabled)
 		{
-			float4 posView = mul(streams.PositionWS, WorldView);
-			for (int i=0; i<4; i++)
+			if (streams.quadSize.x > 0 || streams.quadSize.y > 0)
 			{
-				streams.TexCoord  = FontQuadUV[i].xy;
-				float4 viewCornerPos = float4(posView.xyz + FontQuadPositions[i].xyz * float3(streams.quadSize,1), 1);
-				streams.ShadingPosition = mul(viewCornerPos, Projection);
+				float4 posView = mul(streams.PositionWS, WorldView);
+				for (int i=0; i<4; i++)
+				{
+					streams.TexCoord  = FontQuadUV[i].xy;
+					float4 viewCornerPos = float4(posView.xyz + FontQuadPositions[i].xyz * float3(streams.quadSize,1), 1);
+					streams.ShadingPosition = mul(viewCornerPos, Projection);
 
-				triangleStream.Append(streams);
-			}     
+					triangleStream.Append(streams);
+				}     
+			}
 		}
 	}
 

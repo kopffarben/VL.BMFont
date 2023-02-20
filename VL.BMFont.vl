@@ -300,6 +300,7 @@
             <ControlPoint Id="RVSl6iQ1pWyM4UEgRORSfY" Bounds="430,-138" />
             <ControlPoint Id="EIQr1HS3DQSMUhKa9EMrPW" Bounds="470,-103" />
             <ControlPoint Id="OizLduzTVN1PBo2PcfGmSG" Bounds="-577,-76" />
+            <ControlPoint Id="KSWlUBma2zsNJNkdHb2OYy" Bounds="188,723" />
           </Canvas>
           <ProcessDefinition Id="DBZwx4dGpDDOyejkf51WaH">
             <Fragment Id="NHQZi3xIRQwL0Eax4ZnePT" Patch="VvchI4Mn4edMpF2a22g6ou" Enabled="true" />
@@ -371,6 +372,10 @@
           <Link Id="MCgB2ZcIlV2MeOAQLPqp1C" Ids="V0ADjNhNki1LqHajNFSDNu,MULzcLRo5eyP8tUcLSliDm" IsHidden="true" />
           <Patch Id="VvchI4Mn4edMpF2a22g6ou" Name="Create" />
           <Patch Id="LWi9TU2I58DOShIHRPPO7n" Name="Update" ManuallySortedPins="true">
+            <Pin Id="QFEZ43CYxGUMmObBD2Hkfv" Name="Entity" Kind="OutputPin" Bounds="970,849" />
+            <Pin Id="HjIizekcVSxQFDt7Frjy5s" Name="BMFontProvider" Kind="OutputPin" Bounds="-30,410" Visibility="Optional" />
+            <Pin Id="TtKF7puxemfNhgZsqeePLm" Name="QuadSize" Kind="OutputPin" Bounds="188,722" />
+            <Pin Id="MULzcLRo5eyP8tUcLSliDm" Name="Mesh" Kind="OutputPin" Bounds="550,714" Visibility="Optional" />
             <Pin Id="BaVPPkfBmUvMOsTc9HX5JC" Name="PosBuffer" Kind="InputPin" Bounds="881,318" />
             <Pin Id="RGIVxC7mrXNOf78VBMAJcw" Name="PosBufferIndex" Kind="InputPin" Bounds="112,36" Visibility="Optional" />
             <Pin Id="GvGxc9XGfoBLW29ENms8Yv" Name="Enabled Buffer" Kind="InputPin" Bounds="-498,-50" />
@@ -392,9 +397,6 @@
             <Pin Id="CkWAUjEAncJOcneKh3h0wz" Name="Placement" Kind="InputPin" Bounds="565,51" />
             <Pin Id="BFSljncrLWBMCPVPW4Jnxv" Name="BorderThickness" Kind="InputPin" Bounds="480,-150" DefaultValue="0.099999994" />
             <Pin Id="SB9ZYCl2gYaLoxCf0mttWh" Name="BorderRadius" Kind="InputPin" Bounds="485,-78" DefaultValue="0.19999999" />
-            <Pin Id="QFEZ43CYxGUMmObBD2Hkfv" Name="Entity" Kind="OutputPin" Bounds="970,849" />
-            <Pin Id="HjIizekcVSxQFDt7Frjy5s" Name="BMFontProvider" Kind="OutputPin" Bounds="-30,410" Visibility="Optional" />
-            <Pin Id="MULzcLRo5eyP8tUcLSliDm" Name="Mesh" Kind="OutputPin" Bounds="550,714" Visibility="Optional" />
           </Patch>
           <Link Id="IHI6nmrb00BLpIHKAw6sAg" Ids="Q11SXG5n3AMPZQw3wyn0VM,OQjhE0vrhE5OTzfh2UZdDc" />
           <Link Id="OZDJqyTL885QAu07gWNWqT" Ids="OQjhE0vrhE5OTzfh2UZdDc,HjIizekcVSxQFDt7Frjy5s" IsHidden="true" />
@@ -413,6 +415,8 @@
           <Link Id="UIEG30vbPTULauhJT3LUgv" Ids="SB9ZYCl2gYaLoxCf0mttWh,EIQr1HS3DQSMUhKa9EMrPW" IsHidden="true" />
           <Link Id="OEo6M9oBpHTNhNuLs91rhb" Ids="OizLduzTVN1PBo2PcfGmSG,BaeIbIUWWjmMzmWAmov5wD" />
           <Link Id="HPefFnQEpgdPoJ86hTg2vm" Ids="GvGxc9XGfoBLW29ENms8Yv,OizLduzTVN1PBo2PcfGmSG" IsHidden="true" />
+          <Link Id="V8dabwWR0kvQGh3izF0yCt" Ids="CbjcQpU7MYELjr49yHRGbe,KSWlUBma2zsNJNkdHb2OYy" />
+          <Link Id="MyBogZJ5i18NofU3CV2N9s" Ids="KSWlUBma2zsNJNkdHb2OYy,TtKF7puxemfNhgZsqeePLm" IsHidden="true" />
         </Patch>
       </Node>
       <Canvas Id="C7sQ3lhwgZKNLM6vATqi92" Name="Internal" Position="710,158">
@@ -2224,6 +2228,7 @@
               <Pin Id="JR67MYgFvAwPyz8P5xetty" Name="BorderRadius" Kind="InputPin" />
               <Pin Id="EMA679UP7i9MhvuO4Cgc7a" Name="Entity" Kind="OutputPin" />
               <Pin Id="B1jxFHlIPIqQN6r4QwHClP" Name="BMFontProvider" Kind="OutputPin" />
+              <Pin Id="Mxt43yhI3MtNGXliej9hSB" Name="QuadSize" Kind="OutputPin" />
               <Pin Id="Dp7fj3ukgn8PgXrEmglhdr" Name="Mesh" Kind="OutputPin" />
             </Node>
             <ControlPoint Id="I5rk0JvRAQkOIpoyBOTfjz" Bounds="247,672" />
@@ -2429,9 +2434,13 @@
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="WordCloudIDRenderer" />
               </p:NodeReference>
-              <Pin Id="SsSMWfisY33MgecCSvf2uj" Name="Provider" Kind="InputPin" />
+              <Pin Id="LdtT2JhE0PJMXc3E0kKhPM" Name="Position Buffer" Kind="InputPin" />
+              <Pin Id="P9EtSIJWW6LLAdqvUOaURL" Name="Position Buffer Index" Kind="InputPin" />
+              <Pin Id="FjvWJofs9vjLisRLJ9KMF6" Name="Enabled Buffer" Kind="InputPin" />
+              <Pin Id="SwxuCdGZpEzPSXET5xMNuL" Name="Quad Size Buffer" Kind="InputPin" />
               <Pin Id="TsKvBSJcszOMtgkWnuFDK2" Name="Mesh" Kind="InputPin" />
               <Pin Id="VvkABaJn0ZZOJMln1sv8TW" Name="IRenderer" Kind="OutputPin" />
+              <Pin Id="SsSMWfisY33MgecCSvf2uj" Name="Provider" Kind="InputPin" />
             </Node>
             <Node Bounds="608,1280,93,19" Id="FejtPsFvBTPM8DAFH3h8HU">
               <p:NodeReference LastCategoryFullName="BMFont" LastDependency="VL.BMFont.vl">
@@ -2596,33 +2605,48 @@
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="BMFontIDShader" />
               </p:NodeReference>
-              <Pin Id="Sh5FTqpdWqdLMLz2E8fTm8" Name="Provider" Kind="InputPin" />
-              <Pin Id="QU3c1rL4dtkOuop6m6fWSn" Name="World" Kind="InputPin" />
+              <Pin Id="OGTrbZ72uvRN2KolWbwoAk" Name="Position Buffer" Kind="InputPin" />
+              <Pin Id="Niw7IlvWoOrNCpP3129wSW" Name="Position Buffer Index" Kind="InputPin" />
+              <Pin Id="JW9anKmFnk2OM0yyDNx6cy" Name="Enabled Buffer" Kind="InputPin" />
+              <Pin Id="Dt8eAzYap3ILhZ8im0Helf" Name="Quad Size Buffer" Kind="InputPin" />
+              <Pin Id="IvEcR1abqRdPluhT1m9Pak" Name="World" Kind="InputPin" />
               <Pin Id="MjD3NPKATzgNNuhfRHWRUF" Name="Parameter Setter" Kind="InputPin" />
               <Pin Id="FkbxgIhBSGILE9DTDpTAkm" Name="Output" Kind="OutputPin" />
             </Node>
-            <ControlPoint Id="TeutwhKMX7DOQdMvhNwpvr" Bounds="693,556" />
             <ControlPoint Id="SwvdHVMT3GzPdjl8lzdNev" Bounds="845,556" />
             <ControlPoint Id="E3fbdeD2hReNFV8uTC0DmT" Bounds="693,871" />
+            <ControlPoint Id="ADUCP1DCRkNOrAaJZJUieh" Bounds="587,470" />
+            <ControlPoint Id="B9RiLZ5vqowN1FK9mS22zq" Bounds="679,526" />
+            <ControlPoint Id="QtOXd8bGUdzPQ0vVWMdAml" Bounds="718,554" />
+            <ControlPoint Id="PdRKC3IlBBUO3qZzAKS5la" Bounds="636,495" />
           </Canvas>
-          <Patch Id="Gscyw6ibq0HPcHHadbmEqi" Name="Create" />
-          <Patch Id="D4Px6tryP34MuKltqt781a" Name="Update">
-            <Pin Id="NaLm8DjXgj9QUXq40O12u0" Name="Provider" Kind="InputPin" Bounds="688,541" />
-            <Pin Id="G0qLaaCUVLIMO1oACBtJOX" Name="Mesh" Kind="InputPin" Bounds="845,556" />
-            <Pin Id="R6ahqU4kJ7BMmEr7risIKY" Name="IRenderer" Kind="OutputPin" Bounds="693,862" />
-          </Patch>
           <ProcessDefinition Id="T5Sa2jziiWpMs4l5BAE7vH">
             <Fragment Id="FWIiQlUohegQQVngd7jGdc" Patch="Gscyw6ibq0HPcHHadbmEqi" Enabled="true" />
             <Fragment Id="M1r7WrVDMBBMq5cN28UlFy" Patch="D4Px6tryP34MuKltqt781a" Enabled="true" />
           </ProcessDefinition>
           <Link Id="HdHC1SW4E4INRRZlDOzP5U" Ids="SY3F87w2L4aOyRgKWsAxcf,Gf8mkHnKFD9PA3YzCTJeV5" />
           <Link Id="ACL5RiVml6BPpbcLOg008P" Ids="FkbxgIhBSGILE9DTDpTAkm,SbwxOKZ2iZQNStLW1I7hG9" />
-          <Link Id="RjX9AL1x4SiNahImtP4V9T" Ids="TeutwhKMX7DOQdMvhNwpvr,Sh5FTqpdWqdLMLz2E8fTm8" />
-          <Link Id="KKmSVQvbFUAN23F6pmJT6t" Ids="NaLm8DjXgj9QUXq40O12u0,TeutwhKMX7DOQdMvhNwpvr" IsHidden="true" />
           <Link Id="GPcCuqFmBoyOnLKOUN0MrT" Ids="SwvdHVMT3GzPdjl8lzdNev,V6XjXGLeDUdLZx50SIok6H" />
           <Link Id="S0Gb0q6QOC2MRBu9j6KMUT" Ids="G0qLaaCUVLIMO1oACBtJOX,SwvdHVMT3GzPdjl8lzdNev" IsHidden="true" />
           <Link Id="NLWMsqFRvUwL8ddU7xUwLX" Ids="E3fbdeD2hReNFV8uTC0DmT,R6ahqU4kJ7BMmEr7risIKY" IsHidden="true" />
           <Link Id="R8HqPzZFGekMN1C0DYyVmk" Ids="KmxVQZ89ZfjPMiINC1mb5O,E3fbdeD2hReNFV8uTC0DmT" />
+          <Link Id="KsEuuOEdkO0NudC2qoGGwd" Ids="E3uY24IaNYaQa26YS1VhNw,ADUCP1DCRkNOrAaJZJUieh" IsHidden="true" />
+          <Link Id="MMMgCcjvj5vPnkUiiX1FSa" Ids="KhtXMRoz3M7NfMT5FJoLIE,B9RiLZ5vqowN1FK9mS22zq" IsHidden="true" />
+          <Link Id="Ta6QvkobkgQPDXMvfEaPTU" Ids="VfoRjaW3WBNLL6wOYajMcF,QtOXd8bGUdzPQ0vVWMdAml" IsHidden="true" />
+          <Link Id="SzyIDiOKQxdMnizYZ6nALV" Ids="ADUCP1DCRkNOrAaJZJUieh,OGTrbZ72uvRN2KolWbwoAk" />
+          <Link Id="LzVJKALYBV5Pj2gB49ReNz" Ids="B9RiLZ5vqowN1FK9mS22zq,JW9anKmFnk2OM0yyDNx6cy" />
+          <Link Id="OIFcnEnRziePkjIMmCgFNW" Ids="QtOXd8bGUdzPQ0vVWMdAml,Dt8eAzYap3ILhZ8im0Helf" />
+          <Link Id="GHVogngvJnRPCHctrOJbwI" Ids="PdRKC3IlBBUO3qZzAKS5la,Niw7IlvWoOrNCpP3129wSW" />
+          <Link Id="UBJZtIrnxJdOuvXTvFRujV" Ids="EU6aLQbSCieP4pmMgLrsKp,PdRKC3IlBBUO3qZzAKS5la" IsHidden="true" />
+          <Patch Id="Gscyw6ibq0HPcHHadbmEqi" Name="Create" />
+          <Patch Id="D4Px6tryP34MuKltqt781a" Name="Update">
+            <Pin Id="E3uY24IaNYaQa26YS1VhNw" Name="Position Buffer" Kind="InputPin" Bounds="247,540" />
+            <Pin Id="EU6aLQbSCieP4pmMgLrsKp" Name="Position Buffer Index" Kind="InputPin" Bounds="645,507" />
+            <Pin Id="KhtXMRoz3M7NfMT5FJoLIE" Name="Enabled Buffer" Kind="InputPin" Bounds="309,509" />
+            <Pin Id="VfoRjaW3WBNLL6wOYajMcF" Name="Quad Size Buffer" Kind="InputPin" Bounds="454,550" />
+            <Pin Id="G0qLaaCUVLIMO1oACBtJOX" Name="Mesh" Kind="InputPin" Bounds="845,556" />
+            <Pin Id="R6ahqU4kJ7BMmEr7risIKY" Name="IRenderer" Kind="OutputPin" Bounds="693,862" />
+          </Patch>
         </Patch>
       </Node>
       <!--
