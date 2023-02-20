@@ -4,6 +4,7 @@
 	{
 		stage StructuredBuffer<float3>			PositionBuffer;
 		stage StructuredBuffer<int>				PositionBufferIndex;
+		stage StructuredBuffer<bool>			enabledBuffer;
 
 		stage StructuredBuffer<float4>			ColorBuffer;
 		stage StructuredBuffer<int>				ColorBufferIndex;
@@ -41,6 +42,11 @@
 	stage override void PreTransformPosition()
 	{
 		AssignVertexID();
+	}
+
+	override stage bool enabled()
+	{
+		return enabledBuffer[PositionBufferIndex[streams.VertexID]];
 	}
 
 

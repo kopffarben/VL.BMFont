@@ -1,5 +1,10 @@
 shader BMFont_Provider
 {
+    stage bool enabled()
+    {
+        return false;
+    }
+
     stage float3 getQuadPos()
     {
         return 1;
