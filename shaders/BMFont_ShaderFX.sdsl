@@ -5,6 +5,7 @@
 		stage StructuredBuffer<float3>			PositionBuffer;
 		stage StructuredBuffer<int>				PositionBufferIndex;
 		stage StructuredBuffer<bool>			enabledBuffer;
+		stage StructuredBuffer<bool> 			selectedBuffer;
 
 		stage StructuredBuffer<float4>			ColorBuffer;
 		stage StructuredBuffer<int>				ColorBufferIndex;
@@ -36,6 +37,10 @@
 
 		stage float  borderThickness	= 0.2;
 		stage float  borderRadius		= 0.5;
+
+		stage float SelectedSaturation = 0.3;
+		stage float SelectedValue = .3;
+		stage float SelectedSize = 0.5;
 	}
 
 	// assign VertexID
@@ -61,7 +66,12 @@
 
 	override stage float2 getQuadSize()
 	{
-		return QuadSizeBuffer[streams.VertexID] * Size;
+		float2 size = QuadSizeBuffer[streams.VertexID] * Size;
+		if (!selectedBuffer[streams.VertexID])
+		{
+			size = size * SelectedSize;
+		}
+		return size;
 	}
 
 	override stage float4 getQuadColor()
@@ -84,7 +94,15 @@
 		BGColorBuffer.GetDimensions(colorCount, stride);
 		if (colorCount == 0) return BGColor;
 		BGColorBufferIndex.GetDimensions(indexCount, stride);
-		return indexCount == 0 ? BGColorBuffer[streams.VertexID % colorCount] : BGColorBuffer[BGColorBufferIndex[streams.VertexID % indexCount] % colorCount];
+		float4 OutCol = indexCount == 0 ? BGColorBuffer[streams.VertexID % colorCount] : BGColorBuffer[BGColorBufferIndex[streams.VertexID % indexCount] % colorCount];
+		if (!selectedBuffer[streams.VertexID])
+		{			
+			//OutCol.xyz = HSVtoRGB(RGBtoHSV(OutCol.xyz)*float3(1,SelectedSaturation,SelectedValue));
+			OutCol = float4(((OutCol.xyz - 1) * SelectedSaturation + 1) * SelectedValue,OutCol.w);
+		}
+
+
+		return OutCol;
     }
 
 	override stage float4 getID()
