@@ -67,7 +67,7 @@
 	override stage float2 getQuadSize()
 	{
 		float2 size = QuadSizeBuffer[streams.VertexID] * Size;
-		if (!selectedBuffer[streams.VertexID])
+		if (!selectedBuffer[PositionBufferIndex[streams.VertexID]])
 		{
 			size = size * SelectedSize;
 		}
@@ -95,7 +95,7 @@
 		if (colorCount == 0) return BGColor;
 		BGColorBufferIndex.GetDimensions(indexCount, stride);
 		float4 OutCol = indexCount == 0 ? BGColorBuffer[streams.VertexID % colorCount] : BGColorBuffer[BGColorBufferIndex[streams.VertexID % indexCount] % colorCount];
-		if (!selectedBuffer[streams.VertexID])
+		if (!selectedBuffer[PositionBufferIndex[streams.VertexID]])
 		{			
 			//OutCol.xyz = HSVtoRGB(RGBtoHSV(OutCol.xyz)*float3(1,SelectedSaturation,SelectedValue));
 			OutCol = float4(((OutCol.xyz - 1) * SelectedSaturation + 1) * SelectedValue,OutCol.w);
