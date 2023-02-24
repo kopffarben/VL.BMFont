@@ -75,14 +75,55 @@ shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension
 		// */
 
 
+
+
 		float borderDist = Provider.getBorder(streams.TexCoord);
-		if (borderDist > 1)
+
+		float2 ddist1 = float2(ddx(borderDist-1), ddy(borderDist-1));
+		float pixelDist1 = (borderDist-1) / length(ddist1);
+		float border1 = saturate(0.5 - pixelDist1);
+
+		float2 ddist2 = float2(ddx(borderDist), ddy(borderDist));
+		float pixelDist2 = (borderDist) / length(ddist2);
+		float border2 = saturate(0.5 - pixelDist2);
+
+		float charDist = Provider.getCharOpacity(streams.TexCoord);
+		float2 ddist3 = float2(ddx(charDist), ddy(charDist));
+		float pixelDist3 = (charDist) / length(ddist3);
+		float border3 = saturate(0.5 - pixelDist3);
+
+
+		float4 colBorder1 = streams.quadCol   * border1;
+		float4 colBorder2 = streams.quadBGCol * border2;
+		float4 colBorder3 = streams.quadCol   * border2;
+		float4 col		  = lerp(lerp(colBorder1,colBorder2,border2),colBorder3,charDist);
+
+		if (border1 == 0 || (border2 == 1 && !Provider.useBG()) && border1 == 1)
 		{
 			discard;
 		}
+
+		return StrideShadingWorldNormal(worldPos, normal) * col;
+
+		if (borderDist > 1)
+		{
+			// sdf distance per pixel (gradient vector)
+			float2 ddist = float2(ddx(borderDist-1), ddy(borderDist-1));
+
+			// distance to edge in pixels (scalar)
+			float pixelDist = (borderDist-1) / length(ddist);
+
+			return StrideShadingWorldNormal(worldPos, normal) * streams.quadCol * saturate(0.5 - pixelDist);
+		}
 		if (borderDist > 0)
 		{
-			return StrideShadingWorldNormal(worldPos, normal) * streams.quadCol;
+			// sdf distance per pixel (gradient vector)
+			float2 ddist = float2(ddx(borderDist), ddy(borderDist));
+
+			// distance to edge in pixels (scalar)
+			float pixelDist = borderDist / length(ddist);
+
+			return StrideShadingWorldNormal(worldPos, normal) * streams.quadCol * saturate(0.5 - pixelDist);
 		}
 		else
 		{
@@ -91,7 +132,15 @@ shader BMFont_DrawSimpleExtension_ShaderFX : MaterialExtension
 			{
 				discard;
 			}
-			return StrideShadingWorldNormal(worldPos, normal) * lerp(Provider.useBG() ? streams.quadBGCol : streams.quadCol, streams.quadCol, min(max(allCharTex,0.0),1.0)) * (borderDist < 0.0) ;
+				// sdf distance per pixel (gradient vector)
+				float2 ddist = float2(ddx(allCharTex), ddy(allCharTex));
+
+				// distance to edge in pixels (scalar)
+				float pixelDist = allCharTex / length(ddist);
+			
+
+
+			return StrideShadingWorldNormal(worldPos, normal) * lerp(Provider.useBG() ? streams.quadBGCol : streams.quadCol, streams.quadCol, allCharTex * abs(borderDist*-1));  ;
 		}	
 	}
 };

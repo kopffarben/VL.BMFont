@@ -132,7 +132,7 @@
               <Pin Id="OA9pAJwqacLOmpKjDR0kag" Name="Cutoff" Kind="InputPin" />
               <Pin Id="F4lOIOz8j2aL4N9CPgflCS" Name="Output" Kind="OutputPin" />
             </Node>
-            <Pad Id="PdP71Ea4YkLP5hNtccgyyd" Comment="Cutoff" Bounds="-111,509,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+            <Pad Id="PdP71Ea4YkLP5hNtccgyyd" Comment="Cutoff" Bounds="-111,509,35,35" ShowValueBox="true" isIOBox="true" Value="False">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Boolean" />
                 <FullNameCategoryReference ID="Primitive" />
@@ -147,7 +147,7 @@
                 <Choice Kind="ProcessNode" Name="BMFont (DrawSimpleExtension)" />
               </p:NodeReference>
               <Pin Id="S1Hb8wAR0jINhsbzqWrHXx" Name="Provider" Kind="InputPin" />
-              <Pin Id="L3CnqK5MkPkMxwYmvxhq9W" Name="Shading Color 0" Kind="InputPin" />
+              <Pin Id="EJmCIXY8XyNMlgEQjo9SaV" Name="Shading Color 0" Kind="InputPin" />
               <Pin Id="UczoViOfFaBP0Wty3WuofM" Name="Output" Kind="OutputPin" />
             </Node>
             <Node Bounds="6,180,165,19" Id="ArOZoKN38thLXbazy7Hp0u">
