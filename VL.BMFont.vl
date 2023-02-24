@@ -306,6 +306,9 @@
             <ControlPoint Id="OizLduzTVN1PBo2PcfGmSG" Bounds="-667,-76" />
             <ControlPoint Id="KSWlUBma2zsNJNkdHb2OYy" Bounds="188,723" />
             <ControlPoint Id="AIXBkDwzOzsO2fIfe5Kqtc" Bounds="-579,-77" />
+            <ControlPoint Id="B3hGsDWEfksLDLR5n8rBS3" Bounds="607,-142" />
+            <ControlPoint Id="V7dbx8M3GL7LEyMEjeqBEO" Bounds="643,-117" />
+            <ControlPoint Id="I4mZ3lYZqyoNMaV8MkvryA" Bounds="669,-84" />
           </Canvas>
           <ProcessDefinition Id="DBZwx4dGpDDOyejkf51WaH">
             <Fragment Id="NHQZi3xIRQwL0Eax4ZnePT" Patch="VvchI4Mn4edMpF2a22g6ou" Enabled="true" />
@@ -403,6 +406,9 @@
             <Pin Id="HjIizekcVSxQFDt7Frjy5s" Name="BMFontProvider" Kind="OutputPin" Bounds="-30,410" Visibility="Optional" />
             <Pin Id="TtKF7puxemfNhgZsqeePLm" Name="QuadSize" Kind="OutputPin" Bounds="188,722" />
             <Pin Id="MULzcLRo5eyP8tUcLSliDm" Name="Mesh" Kind="OutputPin" Bounds="550,714" Visibility="Optional" />
+            <Pin Id="CpUa4WR1fyLMpIKZzlw5d3" Name="Selected Saturation" Kind="InputPin" Bounds="607,-142" />
+            <Pin Id="RdRTNJbw5jYNBA55daTeem" Name="Selected Value" Kind="InputPin" Bounds="643,-117" />
+            <Pin Id="Rss5uoqoHLgMyoUE2uYUfk" Name="Selected Size" Kind="InputPin" Bounds="669,-85" />
           </Patch>
           <Link Id="IHI6nmrb00BLpIHKAw6sAg" Ids="Q11SXG5n3AMPZQw3wyn0VM,OQjhE0vrhE5OTzfh2UZdDc" />
           <Link Id="OZDJqyTL885QAu07gWNWqT" Ids="OQjhE0vrhE5OTzfh2UZdDc,HjIizekcVSxQFDt7Frjy5s" IsHidden="true" />
@@ -425,6 +431,12 @@
           <Link Id="MyBogZJ5i18NofU3CV2N9s" Ids="KSWlUBma2zsNJNkdHb2OYy,TtKF7puxemfNhgZsqeePLm" IsHidden="true" />
           <Link Id="HXeqqxvlK5sPf3Yc290InG" Ids="AIXBkDwzOzsO2fIfe5Kqtc,RQErgrP0xASPvRvpjUVUCM" />
           <Link Id="JogWqtRXD92P8geDeZsgvQ" Ids="HduBcwyNcK5OoO6LoExKcO,AIXBkDwzOzsO2fIfe5Kqtc" IsHidden="true" />
+          <Link Id="MgngDzyI7ZGM58l2A12gVt" Ids="B3hGsDWEfksLDLR5n8rBS3,IO4QOCsc5JWPFfUSRL3VH6" />
+          <Link Id="M5zTUntYscZOnZB01INyxg" Ids="CpUa4WR1fyLMpIKZzlw5d3,B3hGsDWEfksLDLR5n8rBS3" IsHidden="true" />
+          <Link Id="DXqZYImYYskP3rhNREX4Z1" Ids="V7dbx8M3GL7LEyMEjeqBEO,Q1kfzNALbnfOK5dMM63V2M" />
+          <Link Id="CspbOLrtSMtMdfNCFNR3Fm" Ids="RdRTNJbw5jYNBA55daTeem,V7dbx8M3GL7LEyMEjeqBEO" IsHidden="true" />
+          <Link Id="RqHRRXLgWaSPLy3uqaJt2K" Ids="I4mZ3lYZqyoNMaV8MkvryA,MrYBhGcRNgjMelgu1E9tfF" />
+          <Link Id="FLwX7toGSQpOPQCsYiMi3N" Ids="Rss5uoqoHLgMyoUE2uYUfk,I4mZ3lYZqyoNMaV8MkvryA" IsHidden="true" />
         </Patch>
       </Node>
       <Canvas Id="C7sQ3lhwgZKNLM6vATqi92" Name="Internal" Position="710,158">
@@ -2235,6 +2247,9 @@
               <Pin Id="MZcLc7qEkliOICPZ6r0Enj" Name="Placement" Kind="InputPin" />
               <Pin Id="QSSUyr0sbT6OBKOtINpCmM" Name="BorderThickness" Kind="InputPin" />
               <Pin Id="JR67MYgFvAwPyz8P5xetty" Name="BorderRadius" Kind="InputPin" />
+              <Pin Id="KuVCYbyiB4IOGLDqC9Xhlh" Name="Selected Saturation" Kind="InputPin" />
+              <Pin Id="V5wu7Gp4g1cNCq53TBedSq" Name="Selected Value" Kind="InputPin" />
+              <Pin Id="LKXWqMOzm7ZPlHDURftl20" Name="Selected Size" Kind="InputPin" />
               <Pin Id="EMA679UP7i9MhvuO4Cgc7a" Name="Entity" Kind="OutputPin" />
               <Pin Id="B1jxFHlIPIqQN6r4QwHClP" Name="BMFontProvider" Kind="OutputPin" />
               <Pin Id="Mxt43yhI3MtNGXliej9hSB" Name="QuadSize" Kind="OutputPin" />
