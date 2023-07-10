@@ -1,4 +1,4 @@
-﻿shader BMFont_ShaderFX : BMFont_Provider, FuseCommonBuffer, TransformationBase, VertexIDStream, CharPlacementStruct
+﻿shader BMFont_ShaderFX : BMFont_Provider, TransformationBase, VertexIDStream, CharPlacementStruct
 {
 	rgroup PerMaterial
 	{
