@@ -1,5 +1,10 @@
 shader BMFont_Provider
 {
+    stage bool enabled()
+    {
+        return false;
+    }
+
     stage float3 getQuadPos()
     {
         return 1;
@@ -15,9 +20,39 @@ shader BMFont_Provider
         return float4(1,1,1,1);
     }
 
+    stage bool useBG()
+    {
+        return false;
+    }
+
+    stage bool useBorder()
+    {
+        return false;
+    }
+
+    stage float4 getBGQuadColor()
+    {
+        return float4(1,1,1,1);
+    }
+
     stage float getCharOpacity(float2 uv)
     {
         return 1;
+    }
+
+    stage float getBorder(float2 uv)
+    {
+        return 1;
+    }
+
+    stage float4 getID()
+    {
+        return float4(-1,-1,-1,-1);
+    }
+
+    stage float3 getPlacement()
+    {
+        return float3(0,0,0);
     }
 
 };

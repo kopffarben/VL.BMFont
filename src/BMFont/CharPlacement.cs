@@ -18,6 +18,21 @@ namespace BMFont
         }
     }
 
+    public struct CharPlacementUV
+    {
+        public Vector2 SrcPos;
+        public Vector2 SrcSize;
+        public Vector2 DesPos;
+        public Vector2 DesSize;
+        public CharPlacementUV(Vector2 SrcPos, Vector2 SrcSize, Vector2 DesPos, Vector2 DesSize)
+        {
+            this.SrcPos = SrcPos;
+            this.SrcSize = SrcSize;
+            this.DesPos = DesPos;
+            this.DesSize = DesSize;
+        }
+    }
+
     public static class Chars
     {
         public const char LineBrake = '\n';

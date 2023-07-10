@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Stride.Graphics" Version="4.1.0.1734" GeneratePathProperty="true" />
     <PackageReference Include="Stride.Rendering" Version="4.1.0.1734" GeneratePathProperty="true" />
-    <PackageReference Include="VL.Stride.Runtime" Version="2022.5.0-0336-g1d99d6e55a" GeneratePathProperty="true" />
+    <PackageReference Include="VL.Stride.Runtime" Version="2022.5.0-0479-g3c2e2cbf1f" GeneratePathProperty="true" />
   </ItemGroup>
 
   <ItemGroup>

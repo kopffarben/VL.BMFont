@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="EJSUis4GpmZN3JaT3CQ4DN" LanguageVersion="2023.5.3-0053-g0221086038" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="FToID2CQGOrP4eEi83ajki" LanguageVersion="2023.5.3-0053-g0221086038" Version="0.128">
   <NugetDependency Id="EKGPk82yXAjLsM1tg7IQpr" Location="VL.CoreLib" Version="2022.5.0-0479-g3c2e2cbf1f" />
   <Patch Id="ECEmdfCO4meMOIDih7X7tZ">
     <Canvas Id="QIV5ZFU7zcmPyaMmDK3KOb" DefaultCategory="Main" CanvasType="FullCategory" />
@@ -15,39 +15,40 @@
       </p:NodeReference>
       <Patch Id="CIl2n0hNAJsMdUU1U7LhRE">
         <Canvas Id="OIuOKxr3HDWPhOaV7DDvsC" CanvasType="Group">
-          <Node Bounds="448,923,405,19" Id="EGly13iJJYjMu7dH2T03aO">
+          <Node Bounds="448,923,385,19" Id="EGly13iJJYjMu7dH2T03aO">
             <p:NodeReference LastCategoryFullName="Main" LastDependency="VL.BMFont.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="WordCloud" />
             </p:NodeReference>
             <Pin Id="GkYWNGb6dF8MMHRRZiKUwr" Name="PosBuffer" Kind="InputPin" />
-            <Pin Id="KvDTIH3wrQlMlSloY6EMu1" Name="Enabled Buffer" Kind="InputPin" />
-            <Pin Id="DOmKz2PLPvQNoConliRsmc" Name="Selected Buffer" Kind="InputPin" />
+            <Pin Id="HS1VyKnpAWKNyQw0UupKG5" Name="Enabled Buffer" Kind="InputPin" />
+            <Pin Id="ShMUD5p6SbaLu2ax2tLgQz" Name="Selected Buffer" Kind="InputPin" />
             <Pin Id="A09TcjZ9U6hO6czvaWUGPc" Name="Color Buffer" Kind="InputPin" />
             <Pin Id="DzP67XAgblINPpaicNLrph" Name="Use BG" Kind="InputPin" />
             <Pin Id="FoAZ6kissijMajRSJpj771" Name="BGColor Buffer" Kind="InputPin" />
             <Pin Id="F9XOloRWycYN2em9qBPdL2" Name="TextSpread" Kind="InputPin" />
             <Pin Id="V1eeCc4eXqwOInpmrLuRNT" Name="FontPath" Kind="InputPin" />
             <Pin Id="Hh4BYxqv4cZM3KX5CrtfxZ" Name="Size" Kind="InputPin" DefaultValue="0.87" />
-            <Pin Id="I77jscsnypQQZNcSe4nGfB" Name="Padding" Kind="InputPin" />
+            <Pin Id="GWGaqcVXtxhMi3Vfez5zNR" Name="Padding" Kind="InputPin" />
             <Pin Id="PWX96sa0xIPOYF2Npoo6tD" Name="Material" Kind="InputPin" />
             <Pin Id="TEUmycfgowbOFBNwSkz0HK" Name="Is Shadow Caster" Kind="InputPin" DefaultValue="True" />
             <Pin Id="Ajx3O8znIC0LwCluGDeg7j" Name="Enabled" Kind="InputPin" />
-            <Pin Id="SykDvfyK42jPHNEEFPWM78" Name="Placement" Kind="InputPin" />
-            <Pin Id="AErff9sGLDqNhLH1qGMogt" Name="BorderThickness" Kind="InputPin" />
-            <Pin Id="BQIl0PqtYhTPU6OUi9CSGf" Name="BorderRadius" Kind="InputPin" />
-            <Pin Id="AWvkDkYgz0oNDpoJz6a0ng" Name="Selected Saturation" Kind="InputPin" />
-            <Pin Id="R5RsGKR0NJyLzJPsWyWk5a" Name="Selected Value" Kind="InputPin" />
-            <Pin Id="Kcw9v4sXUCxQa87bQO3DiH" Name="Selected Size" Kind="InputPin" />
+            <Pin Id="Om010aredHaMAwniC4aUUM" Name="Placement" Kind="InputPin" />
+            <Pin Id="AsabKT123ZhLG4RDdVgFQw" Name="Use Border" Kind="InputPin" />
+            <Pin Id="Aect1JvpaXCLhZrl24iIDU" Name="BorderThickness" Kind="InputPin" />
+            <Pin Id="LESxATSswXQLkWOwqUMu7D" Name="BorderRadius" Kind="InputPin" />
+            <Pin Id="JCj7W3x7vuIMwpaETfBa6I" Name="Selected Saturation" Kind="InputPin" />
+            <Pin Id="KMPrNhpkwzcLvxTi6Y2cVq" Name="Selected Value" Kind="InputPin" />
+            <Pin Id="IB5HkjG3n1VPobltOI5x2Z" Name="Selected Size" Kind="InputPin" />
             <Pin Id="LYktTBX6lUaM8goAkDLp4w" Name="Entity" Kind="OutputPin" />
-            <Pin Id="C59dqxbs4yaM2DhRpIZxp0" Name="QuadSize" Kind="OutputPin" />
+            <Pin Id="QzMAxpXJ4M7OA0eyNoIcH9" Name="QuadSize" Kind="OutputPin" />
           </Node>
           <Pad Id="CCFC5pfPHfNLiTV1MqVpOO" Comment="FileName" Bounds="547,517,287,15" ShowValueBox="true" isIOBox="true" Value="..\..\Assets\Typo\Hack-BoldItalic.fnt">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Path" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="749,738,77,19" Id="O2tVxX4PS2HNTyX7Ctv9rO">
+          <Node Bounds="664,774,77,19" Id="O2tVxX4PS2HNTyX7Ctv9rO">
             <p:NodeReference LastCategoryFullName="Stride.Materials" LastDependency="VL.Stride.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="Materials" NeedsToBeDirectParent="true" />
@@ -144,7 +145,7 @@
               <Choice Kind="TypeFlag" Name="Vector3" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="T1vduWT1TZmN7WiYvD299S" Bounds="526,-98,516,184" ShowValueBox="true" isIOBox="true" Value="Bevölkerung, Entschlüsselung, Schlucken, Rückgrat, Schauspieler, Tragen, Verweigern, Äußerlich, Vieh, Extravagant, Rasseln, Richtig, U-Bahn, Droge, Prozentsatz, Agenda, Ort, Ost, Schnüre, Herzen, Gefährlich, Poetisch, Verfallen, Dach, Zart, Synonym, Kredit, Gehen, Wärme, Tablett, Gangland, Patchen, Fett, Stift, Zeigen, Wirtschaftlich, Kandidat, Verantwortungsbewusst, Eben, Sicherheit, Keks, Kochen, Pferdespiel, Hauptquartier, Binden, Atem, Donner, Winzig klein, Hasserfüllt, Einfacher, Offenlegung, Fragwürdig, Wegwerfen, Effektiv, Atemlos, Betreiben, Rochen, Abstrakt, Kugel, Hinzufügen, Zart, Biber, Herstellung, Fantastisch, Malen, Kalt, Verblüffung, Makellos, Monochrom, Überall, Import Ameise, Fassade, Ungeschrieben, Zupfen, Grün, Kollision, Entsagen, Getreide, Verderben, Ziehen, Keks, Kochen, Pferdespiel, Hauptquartier, Binden, Atem, Donner, Winzig klein, Hasserfüllt, Einfacher, Offenlegung, Fragwürdig, Wegwerfen, Effektiv, Atemlos, Betreiben, Rochen, Abstrakt, Kugel, Hinzufügen, Zart, Biber, Herstellung, Fantastisch, Malen, Kalt, Verblüffung, Makellos, Monochrom, Überall, Import Ameise, Fassade, Ungeschrieben, Zupfen, Grün, Kollision, Entsagen, Getreide, Verderben, Ziehen, Johannes, David, Maxim">
+          <Pad Id="T1vduWT1TZmN7WiYvD299S" Bounds="526,-98,739,138" ShowValueBox="true" isIOBox="true" Value="Bevölkerung, Entschlüsselung, Schlucken, Rückgrat, Schauspieler, Tragen, Verweigern, Äußerlich, Vieh, Extravagant, Rasseln, Richtig, U-Bahn, Droge, Prozentsatz, Agenda, Ort, Ost, Schnüre, Herzen, Gefährlich, Poetisch, Verfallen, Dach, Zart, Synonym, Kredit, Gehen, Wärme, Tablett, Gangland, Patchen, Fett, Stift, Zeigen, Wirtschaftlich, Kandidat, Verantwortungsbewusst, Eben, Sicherheit, Keks, Kochen, Pferdespiel, Hauptquartier, Binden, Atem, Donner, Winzig klein, Hasserfüllt, Einfacher, Offenlegung, Fragwürdig, Wegwerfen, Effektiv, Atemlos, Betreiben, Rochen, Abstrakt, Kugel, Hinzufügen, Zart, Biber, Herstellung, Fantastisch, Malen, Kalt, Verblüffung, Makellos, Monochrom, Überall, Import Ameise, Fassade, Ungeschrieben, Zupfen, Grün, Kollision, Entsagen, Getreide, Verderben, Ziehen, Keks, Kochen, Pferdespiel, Hauptquartier, Binden, Atem, Donner, Winzig klein, Hasserfüllt, Einfacher, Offenlegung, Fragwürdig, Wegwerfen, Effektiv, Atemlos, Betreiben, Rochen, Abstrakt, Kugel, Hinzufügen, Zart, Biber, Herstellung, Fantastisch, Malen, Kalt, Verblüffung, Makellos, Monochrom, Überall, Import Ameise, Fassade, Ungeschrieben, Zupfen, Grün, Kollision, Entsagen, Getreide, Verderben, Ziehen, Johannes, David, Maxim">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="String" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -333,7 +334,7 @@
               <Choice Kind="TypeFlag" Name="Vector3" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="HiKtsFGGioCMkgWR2Dh64F" Comment="Count" Bounds="375,530,35,15" ShowValueBox="true" isIOBox="true" Value="124">
+          <Pad Id="HiKtsFGGioCMkgWR2Dh64F" Comment="Count" Bounds="375,530,85,15" ShowValueBox="true" isIOBox="true" Value="124">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
@@ -357,7 +358,7 @@
               <Choice Kind="ProcessAppFlag" Name="LinearSpread" />
             </p:NodeReference>
             <Pin Id="G0hvh7Rb2kiM5nUe5Ui2Ad" Name="Center" Kind="InputPin" DefaultValue="0.5" />
-            <Pin Id="LKwRUKByMeaOwA2uWV0pNB" Name="Width" Kind="InputPin" />
+            <Pin Id="LKwRUKByMeaOwA2uWV0pNB" Name="Width" Kind="InputPin" DefaultValue="1" />
             <Pin Id="EO8N7kbIHD6MYt7SpBbPm9" Name="Alignment" Kind="InputPin" />
             <Pin Id="Q7rD2kUaSxxL5RHFMItna8" Name="Phase" Kind="InputPin" />
             <Pin Id="TiJbBHmfCQZObWR0WvIAAZ" Name="Count" Kind="InputPin" />
@@ -403,8 +404,8 @@
                 </p:NodeReference>
                 <Pin Id="VADs4MfLr3vLR4U2cLZG4K" Name="Hue" Kind="InputPin" />
                 <Pin Id="RkL2JH24DRhN4IcE2ySHZI" Name="Saturation" Kind="InputPin" />
-                <Pin Id="LrPEyICOri0N2ZrZDblaCU" Name="Value" Kind="InputPin" DefaultValue="0.14999999" />
-                <Pin Id="RoyxGuklsuZLKDAQyFW5Nk" Name="Alpha" Kind="InputPin" />
+                <Pin Id="LrPEyICOri0N2ZrZDblaCU" Name="Value" Kind="InputPin" DefaultValue="3.67" />
+                <Pin Id="RoyxGuklsuZLKDAQyFW5Nk" Name="Alpha" Kind="InputPin" DefaultValue="0.18" />
                 <Pin Id="JnjTeUX3gncLABIhhpztnn" Name="Result" Kind="OutputPin" />
               </Node>
               <Node Bounds="398,655,25,19" Id="COyKnftux66LvNUHzx6is3">
@@ -450,7 +451,7 @@
             <Pin Id="BNiaHZME16iM85p46uxQid" Name="Output" Kind="OutputPin" />
             <Pin Id="Us3SIVh1alfP3DRnZ6g4wm" Name="Has Changed" Kind="OutputPin" />
           </Node>
-          <Pad Id="QJZCGLsZRUYO6Uuqy7LQoc" Comment="Use BG" Bounds="381,795,38,15" ShowValueBox="true" isIOBox="true" Value="True">
+          <Pad Id="QJZCGLsZRUYO6Uuqy7LQoc" Comment="Use BG" Bounds="381,795,38,15" ShowValueBox="true" isIOBox="true" Value="False">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
               <CategoryReference Kind="Category" Name="Primitive" />
@@ -459,15 +460,58 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="H9wKhU4UMrVPfTpYG0VL9Y" Comment="Iteration Count" Bounds="380,0,35,15" ShowValueBox="true" isIOBox="true" Value="5">
+          <Pad Id="H9wKhU4UMrVPfTpYG0VL9Y" Comment="Iteration Count" Bounds="380,0,35,15" ShowValueBox="true" isIOBox="true" Value="1">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Integer32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="ChbBaJDmBedNVBOZ4K6yCG" Comment="Padding" Bounds="642,756,35,57" ShowValueBox="true" isIOBox="true" Value="10, 10, 10, 10">
+          <Pad Id="GbbXiMtLUxeM3KR3n0tgdQ" Comment="Padding" Bounds="592,598,35,57" ShowValueBox="true" isIOBox="true" Value="10, 10, 10, 10">
             <p:TypeAnnotation LastCategoryFullName="3D" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Vector4" />
             </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:precision p:Type="Int32">0</p:precision>
+              <p:stepsize p:Type="Single">1</p:stepsize>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="OxarOsNMrsJODAVX71A62u" Comment="Placement" Bounds="758,628,35,43" ShowValueBox="true" isIOBox="true" Value="0, 0, 0">
+            <p:TypeAnnotation LastCategoryFullName="3D" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Vector3" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="ThspItTE8J4NDehG9BUEBE" Comment="BorderThickness" Bounds="906,584,35,15" ShowValueBox="true" isIOBox="true" Value="0.14">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="Esh7ejKjqrGLienZKlrRjW" Comment="BorderRadius" Bounds="937,646,35,15" ShowValueBox="true" isIOBox="true" Value="0.19999999">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="NAgBk32p9O1OFPJMVeOZNK" Comment="Selected Saturation" Bounds="914,749,35,15" ShowValueBox="true" isIOBox="true" Value="0.27">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="IoZpk61GsuTO6FF7tmnaBc" Comment="Selected Value" Bounds="940,789,35,15" ShowValueBox="true" isIOBox="true" Value="0.3">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="DAJWN8WYlmYNdgZmKx9khh" Comment="Selected Size" Bounds="973,851,35,15" ShowValueBox="true" isIOBox="true" Value="0.5">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="E7GR9g54Wq1NDQvy9hOUnL" Comment="Use Border" Bounds="897,542,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+            </p:ValueBoxSettings>
           </Pad>
         </Canvas>
         <Patch Id="PKHPSIMPNcFNORFYart9fm" Name="Create" />
@@ -504,6 +548,7 @@
         <Link Id="PDeconLkJzePbGOWWqtpMH" Ids="Ac5KMBIxArAPcxuUE2xCza,FcJ2RCv4McfLqPnr2XwOaL" />
         <Link Id="Cyk5L6mMbxCQIBCOacwvij" Ids="FcJ2RCv4McfLqPnr2XwOaL,KQDEtmGwJwqLR2PI9yvShi" />
         <Link Id="JCEqfcIvuykOpF0l8bCCza" Ids="SpCL2jUNFkEPX4qtGyhRR3,CmBQVvKphttNkiCWDdLbgd" />
+        <Link Id="Im7JKmfZMf0LNYbq96sfVj" Ids="ATA6VPaFTuDQE64MkMmPGh,PWX96sa0xIPOYF2Npoo6tD" />
         <Link Id="EMBIivczJu7MrvUEePS0nW" Ids="L63opmuFgXEL51cc6Bek0n,Hh4BYxqv4cZM3KX5CrtfxZ" />
         <Link Id="HytzzU2AwvJP5I7AlTlhkI" Ids="CmBQVvKphttNkiCWDdLbgd,GYzZNaQWpDaMtmuJjVNHAe" />
         <Link Id="KSdKERAS62CQcpjctu3Sxy" Ids="HiKtsFGGioCMkgWR2Dh64F,TiJbBHmfCQZObWR0WvIAAZ" />
@@ -519,8 +564,14 @@
         <Link Id="KIdkgYTeuy6PxfAqujlnJW" Ids="HGVpU9xDpwnLsOdcP9nAT0,DMXVv7UuCOlPKR8RPBFqrz" />
         <Link Id="UdXM9pGVIV7MujZDf9F9iQ" Ids="H9wKhU4UMrVPfTpYG0VL9Y,BkDyr0yI1u2MSrH4a0LZW1" />
         <Link Id="PQXuTbf69sqOHPJOKfTTWZ" Ids="BkDyr0yI1u2MSrH4a0LZW1,A38gPG1sTASNbb6HLIfGV3" />
-        <Link Id="NA1HVStYUq8N5xz3J8LAqb" Ids="ChbBaJDmBedNVBOZ4K6yCG,I77jscsnypQQZNcSe4nGfB" />
-        <Link Id="P04pjmQM1FcMV6pVuaNbMo" Ids="ATA6VPaFTuDQE64MkMmPGh,PWX96sa0xIPOYF2Npoo6tD" />
+        <Link Id="SRQvb1WgjsUPvTLzzrdqyl" Ids="GbbXiMtLUxeM3KR3n0tgdQ,GWGaqcVXtxhMi3Vfez5zNR" />
+        <Link Id="JZPe4JZYcVTQUnYXkOfstg" Ids="OxarOsNMrsJODAVX71A62u,Om010aredHaMAwniC4aUUM" />
+        <Link Id="KUgZey03fzuNBuSGC0pjeJ" Ids="ThspItTE8J4NDehG9BUEBE,Aect1JvpaXCLhZrl24iIDU" />
+        <Link Id="Jf8HcbdcDp5QUcXdTLOUYX" Ids="Esh7ejKjqrGLienZKlrRjW,LESxATSswXQLkWOwqUMu7D" />
+        <Link Id="VyzzlVc5coQMzTjFMLrzvg" Ids="NAgBk32p9O1OFPJMVeOZNK,JCj7W3x7vuIMwpaETfBa6I" />
+        <Link Id="VZZmTY4gCIXNNcmnZq5I3v" Ids="IoZpk61GsuTO6FF7tmnaBc,KMPrNhpkwzcLvxTi6Y2cVq" />
+        <Link Id="JumlxaOKAmLOvih7wpx9SH" Ids="DAJWN8WYlmYNdgZmKx9khh,IB5HkjG3n1VPobltOI5x2Z" />
+        <Link Id="Sd9ctE7c6HeNbFedn9lhL6" Ids="E7GR9g54Wq1NDQvy9hOUnL,AsabKT123ZhLG4RDdVgFQw" />
       </Patch>
     </Node>
   </Patch>

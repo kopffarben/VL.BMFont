@@ -7,4 +7,12 @@ shader CharPlacementStruct
         int2  DesPos;       // 8
         int2  DesSize;      // 8 
     };
+
+    struct CharPlacementUV    // 32
+    {
+        float2  SrcPos;       // 8
+        float2  SrcSize;      // 8
+        float2  DesPos;       // 8
+        float2  DesSize;      // 8 
+    };
 };
