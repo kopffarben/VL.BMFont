@@ -1,18 +1,13 @@
-﻿shader BMFont_ShaderFX : BMFont_Provider, TransformationBase, VertexIDStream, CharPlacementStruct, BMFont, Transformation
+﻿shader BMFont_ShaderFX : BMFont_Provider, TransformationBase, VertexIDStream, CharPlacementStruct, BMFont, Transformation, ShaderUtils
 {
 	rgroup PerMaterial
 	{
 		stage StructuredBuffer<float3>			PositionBuffer;
-		stage StructuredBuffer<int>				PositionBufferIndex;
 		stage StructuredBuffer<bool>			enabledBuffer;
 		stage StructuredBuffer<bool> 			selectedBuffer;
 
 		stage StructuredBuffer<float4>			ColorBuffer;
-		stage StructuredBuffer<int>				ColorBufferIndex;
-
-
 		stage StructuredBuffer<float4>			BGColorBuffer;
-		stage StructuredBuffer<int>				BGColorBufferIndex;
 
 		stage StructuredBuffer<CharPlacementUV>	CharPlacementUVBuffer;
 		stage StructuredBuffer<int2>			CharStartEndBuffer;
@@ -39,9 +34,9 @@
 		stage float  borderThickness	= 0.2;
 		stage float  borderRadius		= 0.5;
 
-		stage float SelectedSaturation = 0.3;
-		stage float SelectedValue = .3;
-		stage float SelectedSize = 0.5;
+		stage float3 SelectedHSV = float3(0.5,1.0,1.0);
+		stage float3 SelectedBGHSV = float3(0.5,1.0,1.0);
+		stage float  SelectedSize = 2.0;
 	}
 
 	// assign VertexID
@@ -52,41 +47,38 @@
 
 	override stage bool enabled()
 	{
-		uint enabledCount,positionCount,indexCount, stride;
+		uint enabledCount, positionCount, stride;
 		enabledBuffer.GetDimensions(enabledCount, stride);
 		PositionBuffer.GetDimensions(positionCount, stride);
-		PositionBufferIndex.GetDimensions(indexCount, stride);
-
-		return enabledCount == 0 ? true : indexCount == 0 ? enabledBuffer[streams.VertexID % positionCount ] : enabledBuffer[PositionBufferIndex[streams.VertexID % indexCount] % positionCount];
+		return enabledCount == 0 ? true : enabledBuffer[streams.VertexID % positionCount ];
 	}
 
 
 	override stage float3 getQuadPos()
 	{
 
-		uint positionCount,indexCount, stride;
+		uint positionCount, stride;
 		PositionBuffer.GetDimensions(positionCount, stride);
-		PositionBufferIndex.GetDimensions(indexCount, stride);
-		return indexCount == 0 ? PositionBuffer[streams.VertexID % positionCount ] : PositionBuffer[PositionBufferIndex[streams.VertexID % indexCount] % positionCount];
+		return PositionBuffer[streams.VertexID % positionCount ];
 	}
 
 	override stage float2 getQuadSize()
 	{
-		float2 size = QuadSizeBuffer[streams.VertexID] * Size;
-		if (!selectedBuffer[PositionBufferIndex[streams.VertexID]])
-		{
-			size = size * SelectedSize;
-		}
-		return size;
+		uint positionCount,selectedCount, stride;
+		PositionBuffer.GetDimensions(positionCount, stride);
+		selectedBuffer.GetDimensions(selectedCount, stride);
+		float2 size =  QuadSizeBuffer[streams.VertexID % positionCount] * Size;
+		return selectedCount == 0 ? size  : selectedBuffer[streams.VertexID % selectedCount] ? size * SelectedSize : size;
+
 	}
 
 	override stage float4 getQuadColor()
     {
-		uint colorCount,indexCount, stride;
+		uint colorCount, selectedCount, stride;
 		ColorBuffer.GetDimensions(colorCount, stride);
-		if (colorCount == 0) return Color;
-		ColorBufferIndex.GetDimensions(indexCount, stride);
-		return indexCount == 0 ? ColorBuffer[streams.VertexID % colorCount] : ColorBuffer[ColorBufferIndex[streams.VertexID % indexCount] % colorCount ];
+		selectedBuffer.GetDimensions(selectedCount, stride);
+		float4 color = colorCount == 0 ? Color : ColorBuffer[streams.VertexID % colorCount];
+		return selectedCount == 0 ? color  : selectedBuffer[streams.VertexID % selectedCount] ? float4(HSVtoRGB(RGBtoHSV(color.xyz)*SelectedHSV),color.w) : color;
     }
 
 	override stage bool useBG()
@@ -103,36 +95,19 @@
 
 	override stage float4 getBGQuadColor()
     {
-        uint colorCount,indexCount,selectedCount, stride;
+        uint colorCount, selectedCount, stride;
 		BGColorBuffer.GetDimensions(colorCount, stride);
-		if (colorCount == 0) return BGColor;
-		BGColorBufferIndex.GetDimensions(indexCount, stride);
-		float4 OutCol = indexCount == 0 ? BGColorBuffer[streams.VertexID % colorCount] : BGColorBuffer[BGColorBufferIndex[streams.VertexID % indexCount] % colorCount];
-		
 		selectedBuffer.GetDimensions(selectedCount, stride);
-		
-		
-		if (selectedCount > 0 && !selectedBuffer[PositionBufferIndex[streams.VertexID]])
-		{			
-			//OutCol.xyz = HSVtoRGB(RGBtoHSV(OutCol.xyz)*float3(1,SelectedSaturation,SelectedValue));
-			OutCol = float4(((OutCol.xyz - 1) * SelectedSaturation + 1) * SelectedValue,OutCol.w);
-		}
+		float4 color = colorCount == 0 ? BGColor : BGColorBuffer[streams.VertexID % colorCount];
+		return selectedCount == 0 ? color  : selectedBuffer[streams.VertexID % selectedCount] ? float4(HSVtoRGB(RGBtoHSV(color.xyz)*SelectedBGHSV),color.w)  : color;
 
 
-		return OutCol;
+		
     }
 
 	override stage float4 getID()
     {
-		uint posBufferCount,colBufferCount, stride;
-		PositionBufferIndex.GetDimensions(posBufferCount, stride);
-		ColorBufferIndex.GetDimensions(colBufferCount, stride);
-        return float4(
-			(float)streams.VertexID, 
-			posBufferCount == 0 ? -1 : (float)PositionBufferIndex[streams.VertexID % posBufferCount],
-			colBufferCount == 0 ? -1 : (float)ColorBufferIndex[streams.VertexID % colBufferCount],
-			-1
-		);
+        return float4( (float)streams.VertexID, -1, -1, -1);
     }
 
 	override stage float3 getPlacement()

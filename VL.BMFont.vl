@@ -169,20 +169,17 @@
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Pad>
-            <Node Bounds="-161,347,465,19" Id="B41Qo6cG1EvMv8V5oPzNJx">
+            <Node Bounds="-161,347,485,19" Id="B41Qo6cG1EvMv8V5oPzNJx">
               <p:NodeReference LastCategoryFullName="Stride.Rendering.ShaderFX" LastDependency="VL.Stride.Rendering.EffectShaderNodes (D:\_DEV\_Devvvvs\nuget.Repos\Kofa\VL.BMFont)">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="ShaderFX" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="BMFont" />
               </p:NodeReference>
               <Pin Id="CxHuPfT37QjNvqzyuTvQwa" Name="Position Buffer" Kind="InputPin" />
-              <Pin Id="PptMTnFQ5bqPlbfWg9SONi" Name="Position Buffer Index" Kind="InputPin" />
               <Pin Id="BaeIbIUWWjmMzmWAmov5wD" Name="Enabled Buffer" Kind="InputPin" />
               <Pin Id="RQErgrP0xASPvRvpjUVUCM" Name="Selected Buffer" Kind="InputPin" />
               <Pin Id="KR17GCnAJgyLUakgWX8SgV" Name="Color Buffer" Kind="InputPin" />
-              <Pin Id="J1DLH6fAOEpOjuzt6ow9XO" Name="Color Buffer Index" Kind="InputPin" />
               <Pin Id="UpR4FmPhQTEQE9XWKUqZFq" Name="BGColor Buffer" Kind="InputPin" />
-              <Pin Id="QnkM9IgImXkQItNn2XqrhB" Name="BGColor Buffer Index" Kind="InputPin" />
               <Pin Id="S8yx9yZkEd7PhoVLN975Eh" Name="Char Placement UVBuffer" Kind="InputPin" />
               <Pin Id="CZjiOhGQQHYNvf6FdvDgDL" Name="Char Start End Buffer" Kind="InputPin" />
               <Pin Id="NUxNGaZzz9AQBPjEFg2wFq" Name="Quad Size Buffer" Kind="InputPin" />
@@ -196,8 +193,8 @@
               <Pin Id="PlM9uvQZhWSPG6gwMjjRVo" Name="Use Border" Kind="InputPin" />
               <Pin Id="ITmtgDcHptZP8oxFgWsnL0" Name="Border Thickness" Kind="InputPin" />
               <Pin Id="SOU1gMMQVf5OviX2iMPzqa" Name="Border Radius" Kind="InputPin" />
-              <Pin Id="IO4QOCsc5JWPFfUSRL3VH6" Name="Selected Saturation" Kind="InputPin" />
-              <Pin Id="Q1kfzNALbnfOK5dMM63V2M" Name="Selected Value" Kind="InputPin" />
+              <Pin Id="NuszIq1Z6CfNRVbVkI5vfg" Name="Selected HSV" Kind="InputPin" />
+              <Pin Id="D6IDzteczgjMbKicQco2en" Name="Selected BGHSV" Kind="InputPin" />
               <Pin Id="MrYBhGcRNgjMelgu1E9tfF" Name="Selected Size" Kind="InputPin" />
               <Pin Id="Q11SXG5n3AMPZQw3wyn0VM" Name="Output" Kind="OutputPin" />
             </Node>
@@ -208,7 +205,6 @@
             </Pad>
             <ControlPoint Id="JNaHFXJLRgnLxQpZyCcmsw" Bounds="174,-14" />
             <ControlPoint Id="LegiYaO3ZlKN8yxZwrdofU" Bounds="-43,-76" />
-            <ControlPoint Id="Hj92l9el7xpM6ELavtMMp3" Bounds="-775,-82" />
             <ControlPoint Id="Tz42csdWgl0MxH64iWBwyh" Bounds="1103,587" />
             <ControlPoint Id="CKweHwzFjxWLK3lKOG1hhn" Bounds="-180,654" />
             <ControlPoint Id="I48fmECkEkANrjsv0VdY6i" Bounds="-89,663" />
@@ -226,7 +222,6 @@
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Pad>
-            <ControlPoint Id="MLwL6O72jGGM6wXEiZGVyp" Bounds="-386,-77" />
             <ControlPoint Id="MPwhYktl90UOejqfv5aTdu" Bounds="-478,-76" />
             <Node Bounds="195,-107,65,19" Id="EsAZRpm0jN1NqKRuFMz7H7">
               <p:NodeReference LastCategoryFullName="Color.RGBA" LastDependency="VL.CoreLib.vl">
@@ -276,7 +271,6 @@
               <Pin Id="VoHWk3cPNXSPVyxyvDxkKZ" Name="Output" Kind="StateOutputPin" />
             </Node>
             <ControlPoint Id="DH7rN0ImCTcNAUqOy8V08e" Bounds="-274,-77" />
-            <ControlPoint Id="FRGBoLf9fwEM4d9zpNGhkX" Bounds="-178,-76" />
             <ControlPoint Id="MKbz92YnYrwMFjjN78IxGM" Bounds="323,-159" />
             <ControlPoint Id="LP4LBG9Ay8vOBAyWxsVx2A" Bounds="270,-152" />
             <ControlPoint Id="V0ADjNhNki1LqHajNFSDNu" Bounds="550,732" />
@@ -307,11 +301,11 @@
             <ControlPoint Id="OizLduzTVN1PBo2PcfGmSG" Bounds="-667,-76" />
             <ControlPoint Id="KSWlUBma2zsNJNkdHb2OYy" Bounds="188,723" />
             <ControlPoint Id="AIXBkDwzOzsO2fIfe5Kqtc" Bounds="-579,-77" />
-            <ControlPoint Id="B3hGsDWEfksLDLR5n8rBS3" Bounds="607,-142" />
-            <ControlPoint Id="V7dbx8M3GL7LEyMEjeqBEO" Bounds="643,-117" />
             <ControlPoint Id="I4mZ3lYZqyoNMaV8MkvryA" Bounds="669,-84" />
             <ControlPoint Id="DUCyncnEamUNPHrLLKjkSH" Bounds="389,-171" />
             <ControlPoint Id="KFqw7OVeWrhO5i1BrH6R0B" Bounds="385,229" />
+            <ControlPoint Id="N6QRvJ31kcBOzOqdQBwWwR" Bounds="573,-139" />
+            <ControlPoint Id="CQdsvwro8E2N9SfqbCZeUs" Bounds="612,-111" />
           </Canvas>
           <ProcessDefinition Id="DBZwx4dGpDDOyejkf51WaH">
             <Fragment Id="NHQZi3xIRQwL0Eax4ZnePT" Patch="VvchI4Mn4edMpF2a22g6ou" Enabled="true" />
@@ -347,16 +341,12 @@
           <Link Id="RaN6rj1SnfIL8IAs7wFJco" Ids="JabldZPJvJTLUb73rOmSwB,PZn43tO4TLVO7cD2vE4D4z,VD0Oz5MAeSXNlL1MWnCC6b,FfQtOpjywMnMMm6nPH4bsD" />
           <Link Id="MLDbEbrXgLNPRKUBAhqGPT" Ids="LegiYaO3ZlKN8yxZwrdofU,SHVF3NRGfqjNdEfgsvHJBu" />
           <Link Id="H8oFPQIsYjQL8yNij2vByB" Ids="PARl73TZz4fLg84UqweJz9,LegiYaO3ZlKN8yxZwrdofU" IsHidden="true" />
-          <Link Id="URJAHn4Gr3dMBw6P1iBD2r" Ids="RGIVxC7mrXNOf78VBMAJcw,Hj92l9el7xpM6ELavtMMp3" IsHidden="true" />
           <Link Id="Acsg9WiVvfONkOYkoqZ22a" Ids="N58LXOwLKIMNpgIHXVeMSQ,ABliozePlTVNL6znVvVWCt" />
           <Link Id="MY1KEIb34WhNT6Az7aHWoe" Ids="KEuDw2ptzGZMtzXV6dZyNx,N58LXOwLKIMNpgIHXVeMSQ" IsHidden="true" />
           <Link Id="KhFbquCoEpwNy9pTM4UyQ1" Ids="MVjo9hZXznYMsVxs7YJaMN,VWHkOS4ptIwLjG6iYi5bSi" />
           <Link Id="SruxCluLzjYNQVg2UgJcsX" Ids="L0K3DAAM4jGP51GB90N3EL,DmxNmfvCXcqO6aKjrvLBDi" />
           <Link Id="IOFfKV0NajxLUeNh2Nbrod" Ids="LQcMI7gjVrJO1xvsrCIciX,PHoRB4Ol7kmNFbpLigJYNs" />
           <Link Id="MXFJ3gMytNFMyQ4mfRan4q" Ids="QCFeAAody5WOfRyF973mjK,CxHuPfT37QjNvqzyuTvQwa" />
-          <Link Id="QqgNw4QCl69LfuA9Wf6G5H" Ids="Hj92l9el7xpM6ELavtMMp3,PptMTnFQ5bqPlbfWg9SONi" />
-          <Link Id="CqA4GmSh00DOYe04xF0lsh" Ids="MLwL6O72jGGM6wXEiZGVyp,J1DLH6fAOEpOjuzt6ow9XO" />
-          <Link Id="CIOkuwLdpeYOHEqDCzzoBD" Ids="Dbbb667DcGONYVURjUjTQc,MLwL6O72jGGM6wXEiZGVyp" IsHidden="true" />
           <Link Id="TcYUdP0g4TtLsH6Qk6cagO" Ids="QYia95v3SPFLAM8KcipET2,MPwhYktl90UOejqfv5aTdu" IsHidden="true" />
           <Link Id="IU6WzXo79T1P2iwUhSxmYc" Ids="MPwhYktl90UOejqfv5aTdu,KR17GCnAJgyLUakgWX8SgV" />
           <Link Id="NRwNh3p7D8eNTAUEAp0I2g" Ids="FXUlXKysnciOcOIbNig8Go,CREIndD4WJwP9QDCkxkNNJ" />
@@ -373,8 +363,6 @@
           <Link Id="BZ8c1esnYHvOA7UKxojB6P" Ids="VoHWk3cPNXSPVyxyvDxkKZ,EmoW4gshmMJLzPtzV1xTm0,EQELWC8EYbDNBKoQpLVrDY" />
           <Link Id="AMhGOBv59sjQMwzL0dfbtF" Ids="DH7rN0ImCTcNAUqOy8V08e,UpR4FmPhQTEQE9XWKUqZFq" />
           <Link Id="MRSftwMHdzvOuuCCQwy7W0" Ids="QNQCjg2ow8cNGEuf4UtVGB,DH7rN0ImCTcNAUqOy8V08e" IsHidden="true" />
-          <Link Id="BBq5XcE2Fo1PA68D7INe4L" Ids="FRGBoLf9fwEM4d9zpNGhkX,QnkM9IgImXkQItNn2XqrhB" />
-          <Link Id="RZZhWOUj1xpMH3yTTeiPr2" Ids="T4bhv0pIujJO9w6gRtDZno,FRGBoLf9fwEM4d9zpNGhkX" IsHidden="true" />
           <Link Id="G0PJeL2myj2MeHVkWa29qY" Ids="MKbz92YnYrwMFjjN78IxGM,HPOfmQIisREMc6MU4catXd" />
           <Link Id="MLjiIVMSFjvOz6MQh0igLl" Ids="QISPabdDJ9JPPfqcALKGf2,MKbz92YnYrwMFjjN78IxGM" IsHidden="true" />
           <Link Id="NyfTOh9Zq0cPQJpxrKvfob" Ids="LP4LBG9Ay8vOBAyWxsVx2A,FPj6PbiAFPOP5q659xQB0a,J83QLx3KCnKNPN6gx26CWn" />
@@ -384,16 +372,12 @@
           <Patch Id="VvchI4Mn4edMpF2a22g6ou" Name="Create" />
           <Patch Id="LWi9TU2I58DOShIHRPPO7n" Name="Update" ManuallySortedPins="true">
             <Pin Id="BaVPPkfBmUvMOsTc9HX5JC" Name="PosBuffer" Kind="InputPin" Bounds="881,318" />
-            <Pin Id="RGIVxC7mrXNOf78VBMAJcw" Name="PosBufferIndex" Kind="InputPin" Bounds="112,36" Visibility="Optional" />
             <Pin Id="GvGxc9XGfoBLW29ENms8Yv" Name="Enabled Buffer" Kind="InputPin" Bounds="-498,-50" />
             <Pin Id="HduBcwyNcK5OoO6LoExKcO" Name="Selected Buffer" Kind="InputPin" Bounds="-514,-118" />
             <Pin Id="LyU7Su8rb6mMz94pCMVqOh" Name="Color" Kind="InputPin" Bounds="-141,-21" Visibility="Optional" />
             <Pin Id="QYia95v3SPFLAM8KcipET2" Name="Color Buffer" Kind="InputPin" Bounds="94,57" />
-            <Pin Id="Dbbb667DcGONYVURjUjTQc" Name="Color Buffer Index" Kind="InputPin" Bounds="169,-18" Visibility="Optional" />
-            <Pin Id="DhILMDMfufeM22eNVDKYtS" Name="Use BG" Kind="InputPin" Bounds="-135,-188" />
-            <Pin Id="QISPabdDJ9JPPfqcALKGf2" Name="BGColor" Kind="InputPin" Bounds="-65,-261" Visibility="Optional" />
+            <Pin Id="QISPabdDJ9JPPfqcALKGf2" Name="BGColor" Kind="InputPin" Bounds="-65,-261" DefaultValue="3.427267E-07, 3.427267E-07, 3.427267E-07, 1" Visibility="Optional" />
             <Pin Id="QNQCjg2ow8cNGEuf4UtVGB" Name="BGColor Buffer" Kind="InputPin" Bounds="40,-22" />
-            <Pin Id="T4bhv0pIujJO9w6gRtDZno" Name="BGColor Buffer Index" Kind="InputPin" Bounds="119,-125" Visibility="Optional" />
             <Pin Id="PARl73TZz4fLg84UqweJz9" Name="TextSpread" Kind="InputPin" Bounds="205,44" />
             <Pin Id="SEpUp8hZOQlLbQ2ehgPQzd" Name="FontPath" Kind="InputPin" />
             <Pin Id="KEuDw2ptzGZMtzXV6dZyNx" Name="Size" Kind="InputPin" Bounds="471,46" />
@@ -401,14 +385,15 @@
             <Pin Id="NtOP4nZh9EzPQwgJTHXf3u" Name="Bounding Box" Kind="InputPin" Bounds="373,133" Visibility="Optional" />
             <Pin Id="F1f4suRticXMPDirEwOdpU" Name="Material" Kind="InputPin" Bounds="1357,312" />
             <Pin Id="EUQbYSfmjDDMjX5LdCXMDe" Name="Is Shadow Caster" Kind="InputPin" Bounds="858,664" />
-            <Pin Id="QqlJbPhXktePXS0XzUAC1Z" Name="Enabled" Kind="InputPin" Bounds="1625,338" />
             <Pin Id="CkWAUjEAncJOcneKh3h0wz" Name="Placement" Kind="InputPin" Bounds="565,51" />
+            <Pin Id="DhILMDMfufeM22eNVDKYtS" Name="Use BG" Kind="InputPin" Bounds="-135,-188" />
             <Pin Id="AMvLZjWEZeDNv4VSIzP3Y3" Name="Use Border" Kind="InputPin" Bounds="296,-52" />
             <Pin Id="BFSljncrLWBMCPVPW4Jnxv" Name="BorderThickness" Kind="InputPin" Bounds="480,-150" DefaultValue="0.099999994" />
             <Pin Id="SB9ZYCl2gYaLoxCf0mttWh" Name="BorderRadius" Kind="InputPin" Bounds="485,-78" DefaultValue="0.19999999" />
-            <Pin Id="CpUa4WR1fyLMpIKZzlw5d3" Name="Selected Saturation" Kind="InputPin" Bounds="607,-142" />
-            <Pin Id="RdRTNJbw5jYNBA55daTeem" Name="Selected Value" Kind="InputPin" Bounds="643,-117" />
             <Pin Id="Rss5uoqoHLgMyoUE2uYUfk" Name="Selected Size" Kind="InputPin" Bounds="669,-85" />
+            <Pin Id="DQvESb6olE2OjoFBRIY2dJ" Name="Selected HSV" Kind="InputPin" Bounds="573,-141" />
+            <Pin Id="G2tun0UtJlZOUzcKXg4sLA" Name="Selected BGHSV" Kind="InputPin" Bounds="609,-104" />
+            <Pin Id="QqlJbPhXktePXS0XzUAC1Z" Name="Enabled" Kind="InputPin" Bounds="1625,338" />
             <Pin Id="QFEZ43CYxGUMmObBD2Hkfv" Name="Entity" Kind="OutputPin" Bounds="970,849" />
             <Pin Id="HjIizekcVSxQFDt7Frjy5s" Name="BMFontProvider" Kind="OutputPin" Bounds="-30,410" Visibility="Optional" />
             <Pin Id="TtKF7puxemfNhgZsqeePLm" Name="QuadSize" Kind="OutputPin" Bounds="188,722" />
@@ -435,14 +420,14 @@
           <Link Id="MyBogZJ5i18NofU3CV2N9s" Ids="KSWlUBma2zsNJNkdHb2OYy,TtKF7puxemfNhgZsqeePLm" IsHidden="true" />
           <Link Id="HXeqqxvlK5sPf3Yc290InG" Ids="AIXBkDwzOzsO2fIfe5Kqtc,RQErgrP0xASPvRvpjUVUCM" />
           <Link Id="JogWqtRXD92P8geDeZsgvQ" Ids="HduBcwyNcK5OoO6LoExKcO,AIXBkDwzOzsO2fIfe5Kqtc" IsHidden="true" />
-          <Link Id="MgngDzyI7ZGM58l2A12gVt" Ids="B3hGsDWEfksLDLR5n8rBS3,IO4QOCsc5JWPFfUSRL3VH6" />
-          <Link Id="M5zTUntYscZOnZB01INyxg" Ids="CpUa4WR1fyLMpIKZzlw5d3,B3hGsDWEfksLDLR5n8rBS3" IsHidden="true" />
-          <Link Id="DXqZYImYYskP3rhNREX4Z1" Ids="V7dbx8M3GL7LEyMEjeqBEO,Q1kfzNALbnfOK5dMM63V2M" />
-          <Link Id="CspbOLrtSMtMdfNCFNR3Fm" Ids="RdRTNJbw5jYNBA55daTeem,V7dbx8M3GL7LEyMEjeqBEO" IsHidden="true" />
           <Link Id="RqHRRXLgWaSPLy3uqaJt2K" Ids="I4mZ3lYZqyoNMaV8MkvryA,MrYBhGcRNgjMelgu1E9tfF" />
           <Link Id="FLwX7toGSQpOPQCsYiMi3N" Ids="Rss5uoqoHLgMyoUE2uYUfk,I4mZ3lYZqyoNMaV8MkvryA" IsHidden="true" />
           <Link Id="FkImWLNrBTPM0wMZtcyKXA" Ids="DUCyncnEamUNPHrLLKjkSH,KFqw7OVeWrhO5i1BrH6R0B,PlM9uvQZhWSPG6gwMjjRVo" />
           <Link Id="CfA6OUp7Kq5QZbeNHECbmW" Ids="AMvLZjWEZeDNv4VSIzP3Y3,DUCyncnEamUNPHrLLKjkSH" IsHidden="true" />
+          <Link Id="Kdd9uH2nFMAOvUBg2htNGd" Ids="N6QRvJ31kcBOzOqdQBwWwR,NuszIq1Z6CfNRVbVkI5vfg" />
+          <Link Id="IXXuYLWygJxMEq2MgHxWHF" Ids="DQvESb6olE2OjoFBRIY2dJ,N6QRvJ31kcBOzOqdQBwWwR" IsHidden="true" />
+          <Link Id="AoG5VHjgwWqPkgyug9447j" Ids="CQdsvwro8E2N9SfqbCZeUs,D6IDzteczgjMbKicQco2en" />
+          <Link Id="B1KJTu0K3c2LqmQ5rbPyZP" Ids="G2tun0UtJlZOUzcKXg4sLA,CQdsvwro8E2N9SfqbCZeUs" IsHidden="true" />
         </Patch>
       </Node>
       <Canvas Id="C7sQ3lhwgZKNLM6vATqi92" Name="Internal" Position="710,158">
@@ -2232,16 +2217,12 @@
                 <Choice Kind="ProcessAppFlag" Name="WordCloud" />
               </p:NodeReference>
               <Pin Id="HUiERsR9icLQFRLhH6Lezs" Name="PosBuffer" Kind="InputPin" />
-              <Pin Id="TR15TitCtcGPlgrDG8BEvp" Name="PosBufferIndex" Kind="InputPin" />
               <Pin Id="Ignqb0JXVcSQNAuk4occjF" Name="Enabled Buffer" Kind="InputPin" />
               <Pin Id="OZ3SIZKMasdPGyslr9INT2" Name="Selected Buffer" Kind="InputPin" />
               <Pin Id="I4IzrNtZBGlQT5yUgCk6oA" Name="Color" Kind="InputPin" />
               <Pin Id="Dou4n6gI819OuQBT0Ygvlp" Name="Color Buffer" Kind="InputPin" />
-              <Pin Id="KPSMxtNpiCZQQYniYBoxYQ" Name="Color Buffer Index" Kind="InputPin" />
-              <Pin Id="GIbzvBeQiFHMdwAtDLjeeB" Name="Use BG" Kind="InputPin" />
               <Pin Id="R6cTabmrqUeMLwqTfLEncf" Name="BGColor" Kind="InputPin" />
               <Pin Id="Sq9jpnDSUvbOsh84j5JSWB" Name="BGColor Buffer" Kind="InputPin" />
-              <Pin Id="LaIj2FbexmyPNKBSlq5Mih" Name="BGColor Buffer Index" Kind="InputPin" />
               <Pin Id="O9IGcFX7GA7MKPyGNFKzwR" Name="TextSpread" Kind="InputPin" />
               <Pin Id="Q72O2QnzH5CQJG39TP2fhq" Name="FontPath" Kind="InputPin" />
               <Pin Id="LfO1jctcah4NBa0Te1ArHU" Name="Size" Kind="InputPin" />
@@ -2249,18 +2230,22 @@
               <Pin Id="QHc4uhRnGxWLD4oHFWRair" Name="Bounding Box" Kind="InputPin" />
               <Pin Id="KEosnHi9eC6LL2qnmFSS8h" Name="Material" Kind="InputPin" />
               <Pin Id="CKPd650CG6WPEWG4CUKyHa" Name="Is Shadow Caster" Kind="InputPin" />
-              <Pin Id="IkaPZjtYAkfOaET6c8uzIt" Name="Enabled" Kind="InputPin" />
               <Pin Id="MZcLc7qEkliOICPZ6r0Enj" Name="Placement" Kind="InputPin" />
+              <Pin Id="GIbzvBeQiFHMdwAtDLjeeB" Name="Use BG" Kind="InputPin" />
               <Pin Id="EsUuQHBUj2aO7pf9WraA2M" Name="Use Border" Kind="InputPin" />
               <Pin Id="QSSUyr0sbT6OBKOtINpCmM" Name="BorderThickness" Kind="InputPin" />
               <Pin Id="JR67MYgFvAwPyz8P5xetty" Name="BorderRadius" Kind="InputPin" />
-              <Pin Id="KuVCYbyiB4IOGLDqC9Xhlh" Name="Selected Saturation" Kind="InputPin" />
-              <Pin Id="V5wu7Gp4g1cNCq53TBedSq" Name="Selected Value" Kind="InputPin" />
               <Pin Id="LKXWqMOzm7ZPlHDURftl20" Name="Selected Size" Kind="InputPin" />
+              <Pin Id="SfXDhoq7fJUPh7C9qugM6w" Name="Selected HSV" Kind="InputPin" />
+              <Pin Id="DfxevpclVHPOWdK0uBFcgW" Name="Selected BGHSV" Kind="InputPin" />
+              <Pin Id="IkaPZjtYAkfOaET6c8uzIt" Name="Enabled" Kind="InputPin" />
               <Pin Id="EMA679UP7i9MhvuO4Cgc7a" Name="Entity" Kind="OutputPin" />
               <Pin Id="B1jxFHlIPIqQN6r4QwHClP" Name="BMFontProvider" Kind="OutputPin" />
               <Pin Id="Mxt43yhI3MtNGXliej9hSB" Name="QuadSize" Kind="OutputPin" />
               <Pin Id="Dp7fj3ukgn8PgXrEmglhdr" Name="Mesh" Kind="OutputPin" />
+              <Pin Id="LaIj2FbexmyPNKBSlq5Mih" Name="BGColor Buffer Index" Kind="InputPin" />
+              <Pin Id="KPSMxtNpiCZQQYniYBoxYQ" Name="Color Buffer Index" Kind="InputPin" />
+              <Pin Id="TR15TitCtcGPlgrDG8BEvp" Name="PosBufferIndex" Kind="InputPin" />
             </Node>
             <ControlPoint Id="I5rk0JvRAQkOIpoyBOTfjz" Bounds="247,672" />
             <ControlPoint Id="EMRhQDRz7kILWmn0GPA56c" Bounds="266,-122" />
