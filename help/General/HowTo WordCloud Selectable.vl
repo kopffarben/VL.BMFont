@@ -16,13 +16,12 @@
       <Patch Id="CIl2n0hNAJsMdUU1U7LhRE">
         <Canvas Id="OIuOKxr3HDWPhOaV7DDvsC" CanvasType="Group">
           <Node Bounds="973,1418,465,19" Id="EGly13iJJYjMu7dH2T03aO">
-            <p:NodeReference LastCategoryFullName="Main" LastDependency="VL.BMFont.vl">
+            <p:NodeReference LastCategoryFullName="BMFont" LastDependency="VL.BMFont.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="WordCloud" />
+              <Choice Kind="ProcessAppFlag" Name="WordCloudSelected" />
             </p:NodeReference>
             <Pin Id="GkYWNGb6dF8MMHRRZiKUwr" Name="PosBuffer" Kind="InputPin" />
             <Pin Id="HS1VyKnpAWKNyQw0UupKG5" Name="Enabled Buffer" Kind="InputPin" />
-            <Pin Id="ShMUD5p6SbaLu2ax2tLgQz" Name="Selected Buffer" Kind="InputPin" />
             <Pin Id="A09TcjZ9U6hO6czvaWUGPc" Name="Color Buffer" Kind="InputPin" />
             <Pin Id="FoAZ6kissijMajRSJpj771" Name="BGColor Buffer" Kind="InputPin" />
             <Pin Id="F9XOloRWycYN2em9qBPdL2" Name="TextSpread" Kind="InputPin" />
@@ -42,9 +41,10 @@
             <Pin Id="PWX96sa0xIPOYF2Npoo6tD" Name="Material" Kind="InputPin" />
             <Pin Id="TEUmycfgowbOFBNwSkz0HK" Name="Is Shadow Caster" Kind="InputPin" DefaultValue="True" />
             <Pin Id="Ajx3O8znIC0LwCluGDeg7j" Name="Enabled" Kind="InputPin" />
+            <Pin Id="TAusdo0CquHMZA4fmvxvGq" Name="CameraComponent" Kind="InputPin" />
             <Pin Id="LYktTBX6lUaM8goAkDLp4w" Name="Entity" Kind="OutputPin" />
-            <Pin Id="QzMAxpXJ4M7OA0eyNoIcH9" Name="QuadSize" Kind="OutputPin" />
-            <Pin Id="BxEwGkzbkiiPJMvVKC6kvY" Name="Element Count" Kind="OutputPin" />
+            <Pin Id="DvfLafIYh1VLoU6SfTdtl5" Name="ID" Kind="OutputPin" />
+            <Pin Id="Rriwmrjx0wXPbJvUAj3p5A" Name="Text" Kind="OutputPin" />
           </Node>
           <Pad Id="CCFC5pfPHfNLiTV1MqVpOO" Comment="FileName" Bounds="1154,1039,340,15" ShowValueBox="true" isIOBox="true" Value="..\..\Assets\Typo\Hack-Bold.fnt">
             <p:TypeAnnotation LastCategoryFullName="IO" LastDependency="VL.CoreLib.vl">
@@ -596,6 +596,14 @@
               <Choice Kind="TypeFlag" Name="RGBA" />
             </p:TypeAnnotation>
           </Pad>
+          <Pad Id="Q6IYEkzvL5ULszcyqYAPwb" SlotId="EbaPjP934k1QNFoslPcgWB" Bounds="1275,2060" />
+          <Pad Id="H3p73kSPuEuNO0sxshWSGy" SlotId="EbaPjP934k1QNFoslPcgWB" Bounds="1596,1395" />
+          <Pad Id="QOqlFwKHBIxLpnTBF5s1P0" Comment="ID" Bounds="1200,1474,35,34" ShowValueBox="true" isIOBox="true" Value="0" />
+          <Pad Id="KdXAtKdT8RJO9VpRPiNbr2" Comment="Text" Bounds="1444,1472,35,34" ShowValueBox="true" isIOBox="true">
+            <p:Value>
+              <Item></Item>
+            </p:Value>
+          </Pad>
         </Canvas>
         <Patch Id="PKHPSIMPNcFNORFYart9fm" Name="Create" />
         <Patch Id="Hm4PQwQ06GONrNOPSl1RNI" Name="Update" />
@@ -671,6 +679,11 @@
         <Link Id="GDcQ9ywLxcOQBFXBcTksuX" Ids="F2J5oaH7W6KQQCDiRyzXmT,FoAZ6kissijMajRSJpj771" />
         <Link Id="AvVCDvCf2q9Ovi9DSvLQpt" Ids="SJnNqnDNrf2MGyult3QG1s,TVd4oTGKjhVQDx6DXRNmru" />
         <Link Id="D8x3BVpAHe0OXSzC4MKUAZ" Ids="JynPKFMnPpuOByUWx6ymJu,DQ7GOCqb1FwPwerqYplHBL" />
+        <Slot Id="EbaPjP934k1QNFoslPcgWB" Name="Camera Component" />
+        <Link Id="Ip7lFydlF1zOptApIOIdhs" Ids="Me8HWzxkHTHNkkThp0WHKx,Q6IYEkzvL5ULszcyqYAPwb" />
+        <Link Id="L3p9DblTVmjNQxJe9IZaS8" Ids="H3p73kSPuEuNO0sxshWSGy,TAusdo0CquHMZA4fmvxvGq" />
+        <Link Id="Rg02h0GVOKkQapQ6dhlkrw" Ids="DvfLafIYh1VLoU6SfTdtl5,QOqlFwKHBIxLpnTBF5s1P0" />
+        <Link Id="UQlMI4QaiW3Otuiz4Xl0H9" Ids="Rriwmrjx0wXPbJvUAj3p5A,KdXAtKdT8RJO9VpRPiNbr2" />
       </Patch>
     </Node>
   </Patch>
