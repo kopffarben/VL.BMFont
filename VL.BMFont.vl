@@ -2637,6 +2637,7 @@
                 <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
               </p:ValueBoxSettings>
             </Pad>
+            <Pad Id="PBevkwRloZuNZvHZhy7Tgr" Comment="Left Pressed" Bounds="407,669,35,35" ShowValueBox="true" isIOBox="true" />
           </Canvas>
           <ProcessDefinition Id="KtGHolv1zu0LlGIUADOpYJ">
             <Fragment Id="Fkm0uywqb5gPvJCW0pSaWX" Patch="Vf9QQShVCpnNW9YmtWhwys" Enabled="true" />
@@ -2781,6 +2782,8 @@
           <Link Id="BDtNdO7ESeoPxaxkUPvQpg" Ids="IMm0PjR0CekPJOl6uwcQMx,Tqq5QMAyg3JPO7lwzRfPx6" />
           <Link Id="CfVoiSBCIUNPX30BvHNNIL" Ids="Mxt43yhI3MtNGXliej9hSB,SwxuCdGZpEzPSXET5xMNuL" />
           <Link Id="Sdv63Yg8wfhMhrelvtKd9F" Ids="QIykE5TluTNPi1Ypic3XwM,OXF8Vq3lXwALNeueZlkBqE" />
+          <Link Id="SPBpvPqAZgoNimwScjD1VG" Ids="CJwuzlzAE1QPIbzphI5AB5,PBevkwRloZuNZvHZhy7Tgr" />
+          <Link Id="JiqEQlmX923OjM6BAP3pYQ" Ids="PBevkwRloZuNZvHZhy7Tgr,NIOHm1EVERkP0uwFpG1T98" />
         </Patch>
       </Node>
       <!--
