@@ -35,6 +35,7 @@
 
 		stage float3 Placement = float3(0,0,0);
 
+		stage bool   UseBorder		= false;
 		stage float  borderThickness	= 0.2;
 		stage float  borderRadius		= 0.5;
 
@@ -51,7 +52,12 @@
 
 	override stage bool enabled()
 	{
-		return enabledBuffer[PositionBufferIndex[streams.VertexID]];
+		uint enabledCount,positionCount,indexCount, stride;
+		enabledBuffer.GetDimensions(enabledCount, stride);
+		PositionBuffer.GetDimensions(positionCount, stride);
+		PositionBufferIndex.GetDimensions(indexCount, stride);
+
+		return enabledCount == 0 ? true : indexCount == 0 ? enabledBuffer[streams.VertexID % positionCount ] : enabledBuffer[PositionBufferIndex[streams.VertexID % indexCount] % positionCount];
 	}
 
 
@@ -87,6 +93,13 @@
     {
 		return UseBG;
     }
+
+	override stage bool useBorder()
+    {
+		return UseBorder;
+    }
+
+	
 
 	override stage float4 getBGQuadColor()
     {
@@ -126,7 +139,7 @@
 	override stage float getBorder(float2 uv)
 	{
 
-		 return getBorder( uv, QuadSizeBuffer[streams.VertexID] * Size, borderRadius, borderThickness);
+		 return getBorder( uv, QuadSizeBuffer[streams.VertexID] * Size, borderRadius * Size, borderThickness * Size);
 	}
 
 

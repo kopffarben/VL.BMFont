@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="C6AMdu5Ugy4LapGeomAbOa" LanguageVersion="2022.5.0-0582-g69e6cbc026" Version="0.128">
+<Document xmlns:p="property" xmlns:r="reflection" Id="C6AMdu5Ugy4LapGeomAbOa" LanguageVersion="2023.5.3-0053-g0221086038" Version="0.128">
   <NugetDependency Id="TQg0gaTx6tUM6bpdyt2pWP" Location="VL.CoreLib" Version="2022.5.0-0582-g69e6cbc026" />
   <Patch Id="MkDB3hLiftqOEbMbdJaxNJ">
     <Canvas Id="SPSwJPT1eYcLxlGxikvZgG" DefaultCategory="BMFont" CanvasType="FullCategory">
@@ -142,7 +142,7 @@
               </p:ValueBoxSettings>
             </Pad>
             <Node Bounds="-160,422,50,19" Id="DtmjHk0X9dDQdsif0LsIB6">
-              <p:NodeReference LastCategoryFullName="Stride.Rendering.ShaderFX" LastDependency="VL.BMFont">
+              <p:NodeReference LastCategoryFullName="Stride.Rendering.ShaderFX" LastDependency="VL.Stride.Rendering.EffectShaderNodes (D:\_DEV\_Devvvvs\nuget.Repos\Kofa\VL.BMFont)">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="BMFont (DrawSimpleExtension)" />
               </p:NodeReference>
@@ -170,7 +170,7 @@
               </p:TypeAnnotation>
             </Pad>
             <Node Bounds="-161,347,465,19" Id="B41Qo6cG1EvMv8V5oPzNJx">
-              <p:NodeReference LastCategoryFullName="Stride.Rendering.ShaderFX" LastDependency="VL.BMFont">
+              <p:NodeReference LastCategoryFullName="Stride.Rendering.ShaderFX" LastDependency="VL.Stride.Rendering.EffectShaderNodes (D:\_DEV\_Devvvvs\nuget.Repos\Kofa\VL.BMFont)">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="Category" Name="ShaderFX" NeedsToBeDirectParent="true" />
                 <Choice Kind="ProcessAppFlag" Name="BMFont" />
@@ -193,6 +193,7 @@
               <Pin Id="Ej9BD5Ce517PaBkUpx7gaa" Name="Size" Kind="InputPin" />
               <Pin Id="PHoRB4Ol7kmNFbpLigJYNs" Name="Screen Px Range" Kind="InputPin" DefaultValue="17.1" />
               <Pin Id="Cls6UOE7245L9ApZFeNY0f" Name="Placement" Kind="InputPin" />
+              <Pin Id="PlM9uvQZhWSPG6gwMjjRVo" Name="Use Border" Kind="InputPin" />
               <Pin Id="ITmtgDcHptZP8oxFgWsnL0" Name="Border Thickness" Kind="InputPin" />
               <Pin Id="SOU1gMMQVf5OviX2iMPzqa" Name="Border Radius" Kind="InputPin" />
               <Pin Id="IO4QOCsc5JWPFfUSRL3VH6" Name="Selected Saturation" Kind="InputPin" />
@@ -309,6 +310,8 @@
             <ControlPoint Id="B3hGsDWEfksLDLR5n8rBS3" Bounds="607,-142" />
             <ControlPoint Id="V7dbx8M3GL7LEyMEjeqBEO" Bounds="643,-117" />
             <ControlPoint Id="I4mZ3lYZqyoNMaV8MkvryA" Bounds="669,-84" />
+            <ControlPoint Id="DUCyncnEamUNPHrLLKjkSH" Bounds="389,-171" />
+            <ControlPoint Id="KFqw7OVeWrhO5i1BrH6R0B" Bounds="385,229" />
           </Canvas>
           <ProcessDefinition Id="DBZwx4dGpDDOyejkf51WaH">
             <Fragment Id="NHQZi3xIRQwL0Eax4ZnePT" Patch="VvchI4Mn4edMpF2a22g6ou" Enabled="true" />
@@ -400,15 +403,16 @@
             <Pin Id="EUQbYSfmjDDMjX5LdCXMDe" Name="Is Shadow Caster" Kind="InputPin" Bounds="858,664" />
             <Pin Id="QqlJbPhXktePXS0XzUAC1Z" Name="Enabled" Kind="InputPin" Bounds="1625,338" />
             <Pin Id="CkWAUjEAncJOcneKh3h0wz" Name="Placement" Kind="InputPin" Bounds="565,51" />
+            <Pin Id="AMvLZjWEZeDNv4VSIzP3Y3" Name="Use Border" Kind="InputPin" Bounds="296,-52" />
             <Pin Id="BFSljncrLWBMCPVPW4Jnxv" Name="BorderThickness" Kind="InputPin" Bounds="480,-150" DefaultValue="0.099999994" />
             <Pin Id="SB9ZYCl2gYaLoxCf0mttWh" Name="BorderRadius" Kind="InputPin" Bounds="485,-78" DefaultValue="0.19999999" />
+            <Pin Id="CpUa4WR1fyLMpIKZzlw5d3" Name="Selected Saturation" Kind="InputPin" Bounds="607,-142" />
+            <Pin Id="RdRTNJbw5jYNBA55daTeem" Name="Selected Value" Kind="InputPin" Bounds="643,-117" />
+            <Pin Id="Rss5uoqoHLgMyoUE2uYUfk" Name="Selected Size" Kind="InputPin" Bounds="669,-85" />
             <Pin Id="QFEZ43CYxGUMmObBD2Hkfv" Name="Entity" Kind="OutputPin" Bounds="970,849" />
             <Pin Id="HjIizekcVSxQFDt7Frjy5s" Name="BMFontProvider" Kind="OutputPin" Bounds="-30,410" Visibility="Optional" />
             <Pin Id="TtKF7puxemfNhgZsqeePLm" Name="QuadSize" Kind="OutputPin" Bounds="188,722" />
             <Pin Id="MULzcLRo5eyP8tUcLSliDm" Name="Mesh" Kind="OutputPin" Bounds="550,714" Visibility="Optional" />
-            <Pin Id="CpUa4WR1fyLMpIKZzlw5d3" Name="Selected Saturation" Kind="InputPin" Bounds="607,-142" />
-            <Pin Id="RdRTNJbw5jYNBA55daTeem" Name="Selected Value" Kind="InputPin" Bounds="643,-117" />
-            <Pin Id="Rss5uoqoHLgMyoUE2uYUfk" Name="Selected Size" Kind="InputPin" Bounds="669,-85" />
           </Patch>
           <Link Id="IHI6nmrb00BLpIHKAw6sAg" Ids="Q11SXG5n3AMPZQw3wyn0VM,OQjhE0vrhE5OTzfh2UZdDc" />
           <Link Id="OZDJqyTL885QAu07gWNWqT" Ids="OQjhE0vrhE5OTzfh2UZdDc,HjIizekcVSxQFDt7Frjy5s" IsHidden="true" />
@@ -437,6 +441,8 @@
           <Link Id="CspbOLrtSMtMdfNCFNR3Fm" Ids="RdRTNJbw5jYNBA55daTeem,V7dbx8M3GL7LEyMEjeqBEO" IsHidden="true" />
           <Link Id="RqHRRXLgWaSPLy3uqaJt2K" Ids="I4mZ3lYZqyoNMaV8MkvryA,MrYBhGcRNgjMelgu1E9tfF" />
           <Link Id="FLwX7toGSQpOPQCsYiMi3N" Ids="Rss5uoqoHLgMyoUE2uYUfk,I4mZ3lYZqyoNMaV8MkvryA" IsHidden="true" />
+          <Link Id="FkImWLNrBTPM0wMZtcyKXA" Ids="DUCyncnEamUNPHrLLKjkSH,KFqw7OVeWrhO5i1BrH6R0B,PlM9uvQZhWSPG6gwMjjRVo" />
+          <Link Id="CfA6OUp7Kq5QZbeNHECbmW" Ids="AMvLZjWEZeDNv4VSIzP3Y3,DUCyncnEamUNPHrLLKjkSH" IsHidden="true" />
         </Patch>
       </Node>
       <Canvas Id="C7sQ3lhwgZKNLM6vATqi92" Name="Internal" Position="710,158">
@@ -2220,7 +2226,7 @@
         </p:NodeReference>
         <Patch Id="DGQTlbPkxiVOCyvPAhcjc8">
           <Canvas Id="ObxT1joRn3ANRV7KUjTvtL" CanvasType="Group">
-            <Node Bounds="263,357,305,19" Id="J54Pqp0eVoaPaqS43S25c9">
+            <Node Bounds="263,357,505,19" Id="J54Pqp0eVoaPaqS43S25c9">
               <p:NodeReference LastCategoryFullName="BMFont" LastDependency="VL.BMFont.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessAppFlag" Name="WordCloud" />
@@ -2245,6 +2251,7 @@
               <Pin Id="CKPd650CG6WPEWG4CUKyHa" Name="Is Shadow Caster" Kind="InputPin" />
               <Pin Id="IkaPZjtYAkfOaET6c8uzIt" Name="Enabled" Kind="InputPin" />
               <Pin Id="MZcLc7qEkliOICPZ6r0Enj" Name="Placement" Kind="InputPin" />
+              <Pin Id="EsUuQHBUj2aO7pf9WraA2M" Name="Use Border" Kind="InputPin" />
               <Pin Id="QSSUyr0sbT6OBKOtINpCmM" Name="BorderThickness" Kind="InputPin" />
               <Pin Id="JR67MYgFvAwPyz8P5xetty" Name="BorderRadius" Kind="InputPin" />
               <Pin Id="KuVCYbyiB4IOGLDqC9Xhlh" Name="Selected Saturation" Kind="InputPin" />
@@ -2357,7 +2364,7 @@
               <Patch Id="A9khL74WEvmO5AoUevrNL7" ManuallySortedPins="true">
                 <Patch Id="KfyptALkR8xLaeY9XxmlA5" Name="Create" ManuallySortedPins="true" />
                 <Patch Id="CAuBnJUfMG8PJmy3IgS0OR" Name="Then" ManuallySortedPins="true" />
-                <Node Bounds="471,1916,80,80" Id="J5yRZ3qPj8pPR6ZpS80flL">
+                <Node Bounds="471,1916,110,86" Id="J5yRZ3qPj8pPR6ZpS80flL">
                   <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                     <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                     <CategoryReference Kind="Category" Name="Primitive" NeedsToBeDirectParent="true" />
@@ -2368,7 +2375,7 @@
                     <Patch Id="IUS2i4e8K4WOFAEI3uHGvB" Name="Create" ManuallySortedPins="true" />
                     <Patch Id="E43skSz3FlBNO8S0z8YTsu" Name="Update" ManuallySortedPins="true" />
                     <Patch Id="Tiumznmo5zDQTHsED32Qtp" Name="Dispose" ManuallySortedPins="true" />
-                    <Node Bounds="517,1954" Id="A9i8N1AyaLoLZA7ACs4eEv">
+                    <Node Bounds="517,1954,52,19" Id="A9i8N1AyaLoLZA7ACs4eEv">
                       <p:NodeReference LastCategoryFullName="Collections.Spread" LastDependency="VL.CoreLib.vl">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <CategoryReference Kind="ClassType" Name="Spread" NeedsToBeDirectParent="true" />
@@ -2384,7 +2391,7 @@
                   <ControlPoint Id="MPHD6GWD8LgQd5uuZFO286" Bounds="505,1996" Alignment="Bottom" />
                 </Node>
               </Patch>
-              <ControlPoint Id="I78J2hffjcWOXhpzeJ3Uxy" Bounds="412,1967" Alignment="Bottom" />
+              <ControlPoint Id="I78J2hffjcWOXhpzeJ3Uxy" Bounds="412,2038" Alignment="Bottom" />
               <ControlPoint Id="KPdiVdp2kZvQdJ80q68yG7" Bounds="412,1892" Alignment="Top" />
               <ControlPoint Id="C7DQrbPXwtONJVOdnPIXYt" Bounds="513,2038" Alignment="Bottom" />
             </Node>
@@ -2464,7 +2471,6 @@
               <Pin Id="SwxuCdGZpEzPSXET5xMNuL" Name="Quad Size Buffer" Kind="InputPin" />
               <Pin Id="TsKvBSJcszOMtgkWnuFDK2" Name="Mesh" Kind="InputPin" />
               <Pin Id="VvkABaJn0ZZOJMln1sv8TW" Name="IRenderer" Kind="OutputPin" />
-              <Pin Id="SsSMWfisY33MgecCSvf2uj" Name="Provider" Kind="InputPin" />
             </Node>
             <Node Bounds="608,1280,93,19" Id="FejtPsFvBTPM8DAFH3h8HU">
               <p:NodeReference LastCategoryFullName="BMFont" LastDependency="VL.BMFont.vl">
@@ -2484,6 +2490,13 @@
               <Pin Id="D9Vq9ryB9y6NxZPUPocAV1" Name="RenderView" Kind="OutputPin" />
               <Pin Id="Um30eBnfVQ9OGYpxWpca9k" Name="Actually Used Aspect Ratio" Kind="OutputPin" />
             </Node>
+            <ControlPoint Id="S6BArwEOd2zMo8dRNkYXep" Bounds="436,457" />
+            <ControlPoint Id="RLjGpMLuKhkQF10R9NLYOQ" Bounds="475,481" />
+            <Pad Id="ISO0OH3rN7ZPxddyDMYlMo" Comment="Frame Delay" Bounds="749,1555,35,15" ShowValueBox="true" isIOBox="true" Value="3">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                <Choice Kind="TypeFlag" Name="Integer32" />
+              </p:TypeAnnotation>
+            </Pad>
           </Canvas>
           <ProcessDefinition Id="KtGHolv1zu0LlGIUADOpYJ">
             <Fragment Id="Fkm0uywqb5gPvJCW0pSaWX" Patch="Vf9QQShVCpnNW9YmtWhwys" Enabled="true" />
@@ -2581,7 +2594,6 @@
             <Pin Id="Q1iEG9qepQtM8E4KsX3q87" Name="ID" Kind="OutputPin" Bounds="525,2194" />
             <Pin Id="G9FbTKDEdPmOybtPCKl9GE" Name="Text" Kind="OutputPin" Bounds="621,2202" />
           </Patch>
-          <Link Id="NaokX9JTIx1NGhhNsIRFWt" Ids="B1jxFHlIPIqQN6r4QwHClP,SsSMWfisY33MgecCSvf2uj" />
           <Link Id="O7WpVLhnorMP1gXa7CLjKh" Ids="Dp7fj3ukgn8PgXrEmglhdr,TsKvBSJcszOMtgkWnuFDK2" />
           <Link Id="Bqspz5JT3WHPp4ofIWQyOi" Ids="VvkABaJn0ZZOJMln1sv8TW,V11yU2ah3OwLw8k2mR3qnt" />
           <Link Id="GIpSdCGcPvxNJiJEkR9Huq" Ids="Jg4JEfPXIuxMJMqZ9qpJ9Y,QAw1AnrU1f7QbIgcaGqbXJ" />
@@ -2589,6 +2601,12 @@
           <Link Id="S2yR7a2T0PLOPH1SLMmz16" Ids="KIUSt8rB21xNpNbXXVBZ4y,DruOVmDDZRsLFodmBiQvsR" />
           <Link Id="LiwJgIE9PuVOHxs8qWXxhK" Ids="D9Vq9ryB9y6NxZPUPocAV1,NMxCEgG5QGDPIESxqaLS7E" />
           <Link Id="UjLbosa57a2PcaxFOjQqkw" Ids="Um30eBnfVQ9OGYpxWpca9k,K5viz1CvI7ULMaqQ59stNj" />
+          <Link Id="Lx4O27QMRd7NRD7CsTww14" Ids="UV1ca36T7PWOhd3iX8NJ2n,S6BArwEOd2zMo8dRNkYXep" IsHidden="true" />
+          <Link Id="EcFzp45LHNGOOpgrs30Hcq" Ids="S6BArwEOd2zMo8dRNkYXep,LdtT2JhE0PJMXc3E0kKhPM" />
+          <Link Id="HSyaE7s7701O7KsHHV6o2V" Ids="MO6EfpXssMHMe47PGVbXyp,RLjGpMLuKhkQF10R9NLYOQ" IsHidden="true" />
+          <Link Id="N5HXTfnXZoXNftp7LUMtpU" Ids="RLjGpMLuKhkQF10R9NLYOQ,P9EtSIJWW6LLAdqvUOaURL" />
+          <Link Id="DcaXCtR4HCAL68CLLdYmAn" Ids="Mxt43yhI3MtNGXliej9hSB,SwxuCdGZpEzPSXET5xMNuL" />
+          <Link Id="VcaZhWjHk4wLUvbTushjvZ" Ids="ISO0OH3rN7ZPxddyDMYlMo,M6NYUg1Lw32LnRtzvTqH5T" />
         </Patch>
       </Node>
       <!--
@@ -2624,8 +2642,8 @@
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
             </Pad>
-            <Node Bounds="691,670,90,19" Id="AoIJEsGCVfcLz365Je0NOI">
-              <p:NodeReference LastCategoryFullName="Stride.Rendering.DrawShaders" LastDependency="VL.BMFont">
+            <Node Bounds="691,670,105,19" Id="AoIJEsGCVfcLz365Je0NOI">
+              <p:NodeReference LastCategoryFullName="Stride.Rendering.DrawShaders" LastDependency="VL.Stride.Rendering.EffectShaderNodes (D:\_DEV\_Devvvvs\nuget.Repos\Kofa\VL.BMFont)">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="ProcessNode" Name="BMFontIDShader" />
               </p:NodeReference>
@@ -2731,7 +2749,7 @@
                       <Pin Id="SeMWwSDuHHBMmYZTCJp5Fl" Name="Output" Kind="OutputPin" />
                     </Node>
                     <Node Bounds="1276,1116,508,19" Id="Ezt4x7CnwPeNZfww5Ano8O">
-                      <p:NodeReference LastCategoryFullName="Stride.Rendering.ComputeShaders" LastDependency="VL.BMFont">
+                      <p:NodeReference LastCategoryFullName="Stride.Rendering.ComputeShaders" LastDependency="VL.Stride.Rendering.EffectShaderNodes (D:\_DEV\_Devvvvs\nuget.Repos\Kofa\VL.BMFont)">
                         <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                         <Choice Kind="ProcessNode" Name="IDPipetShader" />
                       </p:NodeReference>
@@ -2822,7 +2840,7 @@
             <ControlPoint Id="EpTY7z3DwwoNhy1L0Are8P" Bounds="1345,822" />
             <ControlPoint Id="K7DfSuWeuHmM7Gq53BHG9I" Bounds="1634,745" />
             <ControlPoint Id="GXRrTbLpnWOL4LfC2IYiKz" Bounds="866,1141" />
-            <Node Bounds="1062,882,109,73" Id="NJQhCs0w86QNGiAEJ0GrQM">
+            <Node Bounds="1062,882,109,74" Id="NJQhCs0w86QNGiAEJ0GrQM">
               <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 <Choice Kind="ProcessStatefulRegion" Name="Cache" />
@@ -2831,7 +2849,7 @@
               <Pin Id="Mcba1m7NMqmOdGWvBB7YZv" Name="Force" Kind="InputPin" />
               <Pin Id="UCQG7SfhBgeLKpW9kO7rng" Name="Dispose Cached Outputs" Kind="InputPin" />
               <Pin Id="AAHse8AZXPKPW2c5vy5mWl" Name="Has Changed" Kind="OutputPin" />
-              <ControlPoint Id="DOQ5bD5O4WMLISqNX3OXhz" Bounds="1076,889" Alignment="Top" />
+              <ControlPoint Id="DOQ5bD5O4WMLISqNX3OXhz" Bounds="1076,888" Alignment="Top" />
               <ControlPoint Id="JRyHbFcUkYgMWStU48NXl3" Bounds="1076,950" Alignment="Bottom" />
               <Patch Id="GgEVVcU8RJ4PsL7qMneqd1" ManuallySortedPins="true">
                 <Patch Id="ChHg0sgS2jIMU8ouhEbopH" Name="Create" ManuallySortedPins="true" />

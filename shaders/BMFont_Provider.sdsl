@@ -25,6 +25,11 @@ shader BMFont_Provider
         return false;
     }
 
+    stage bool useBorder()
+    {
+        return false;
+    }
+
     stage float4 getBGQuadColor()
     {
         return float4(1,1,1,1);

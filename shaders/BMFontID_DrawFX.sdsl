@@ -26,14 +26,20 @@ shader BMFontID_DrawFX : VS_PS_Base, ColorBase, ShaderUtils, Texturing
         float3( 1, -1,0),
     };
 
-    override stage void VSMain()
-    {
-	   uint id = streams.VertexID;
-	   streams.Enabled = enabledBuffer[PositionBufferIndex[id]];;
-	   streams.PositionWS = float4(PositionBuffer[PositionBufferIndex[id]], 1);
-	   streams.quadSize = QuadSizeBuffer[id];
-	   streams.quadBGCol = float4( (float)id, (float)PositionBufferIndex[id], -1,-1);
-       streams.ShadingPosition = streams.Position; // must be assigned to something
+	override stage void VSMain()
+	{
+		//uint id = streams.VertexID;
+
+		uint enabledCount,positionCount,indexCount, stride;
+		enabledBuffer.GetDimensions(enabledCount, stride);
+		PositionBuffer.GetDimensions(positionCount, stride);
+		PositionBufferIndex.GetDimensions(indexCount, stride);
+
+		streams.Enabled = enabledCount == 0 ? true : indexCount == 0 ? enabledBuffer[streams.VertexID % positionCount ] : enabledBuffer[PositionBufferIndex[streams.VertexID % indexCount] % positionCount];
+		streams.PositionWS = float4(indexCount == 0 ? PositionBuffer[streams.VertexID % positionCount ] : PositionBuffer[PositionBufferIndex[streams.VertexID % indexCount] % positionCount], 1);
+		streams.quadSize = QuadSizeBuffer[streams.VertexID];
+		streams.quadBGCol = float4( (float)streams.VertexID, (float)PositionBufferIndex[streams.VertexID], -1,-1);
+		streams.ShadingPosition = streams.Position; // must be assigned to something
     }
 
     // custom geometry shader, quad particle in this case
